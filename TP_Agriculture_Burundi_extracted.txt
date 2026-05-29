@@ -1,0 +1,424 @@
+
+
+===== PAGE 1 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 1 
+ 
+UNIVERSITÉ POLYTECHNIQUE DE GITEGA 
+ 
+BAC 4 – GÉNIE LOGICIEL 
+ 
+TRAVAUX PRATIQUES 
+IA Appliqué à l'Agriculture 
+Prédire les Bonnes et Mauvaises Récoltes au Burundi 
+ 
+Contexte 
+L'agriculture représente plus de 40 % du PIB du Burundi et constitue la principale source 
+de revenus pour plus de 90 % de la population rurale. Pourtant, les rendements agricoles 
+restent très faibles et très variables d'une saison à l'autre, selon les provinces, les cultures 
+et les conditions climatiques. 
+Dans ce TP, vous allez utiliser des données agricoles réelles simulées sur 15 provinces du 
+Burundi (2015 –2023) pour construire des modèles de Machine Learning capables de 
+prédire si une récolte sera bonne ou mauvaise  en fonction de facteurs mesurables : 
+pluviométrie, température, altitude, utilisation d'engrais, etc. 
+ 
+ 
+DESCRIPTION DU DATASET 
+Le fichier agriculture_burundi.csv contient 1 620 observations couvrant 9 années (2015–2023), 2 saisons 
+agricoles (A et B), 15 provinces et 6 cultures principales du Burundi. Chaque ligne représente les données 
+d'une culture dans une province pour une saison donnée. 
+ 
+Variable Type Unité Description 
+annee Entier — Année agricole (2015 à 2023) 
+saison Catégoriel A / B Saison A (mars–juin), Saison B (sept–
+déc) 
+province Catégoriel — 15 provinces du Burundi 
+culture Catégoriel — Maïs, Haricot, Manioc, Patate douce, 
+Sorgho, Bananier 
+altitude_m Numérique mètres Altitude moyenne de la zone cultivée 
+
+===== PAGE 2 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 2 
+pluviometrie_mm Numérique mm Pluviométrie totale de la saison 
+temperature_moy_C Numérique °C Température moyenne de la saison 
+superficie_ha Numérique hectares Superficie totale cultivée 
+utilisation_engrais Binaire 0 / 1 1 = engrais utilisé, 0 = aucun engrais 
+acces_irrigation Binaire 0 / 1 1 = accès à l'irrigation, 0 = culture 
+pluviale 
+nb_menages Entier — Nombre de ménages agricoles concernés 
+rendement_t_ha Numérique t/ha Rendement moyen par hectare 
+production_totale_t Numérique tonnes Production totale = rendement × 
+superficie 
+bonne_recolte  Binaire 0 / 1 1 = bonne récolte, 0 = mauvaise récolte 
+(VARIABLE CIBLE) 
+ 
+Variable cible 
+La variable cible bonne_recolte est définie à partir du rendement : une récolte est considérée 
+« bonne » si le rendement dépasse 85 % du rendement moyen attendu pour la culture 
+concernée. Elle contient quelques valeurs manquantes (~2,5 %). 
+ 
+Attention 
+Le dataset contient intentionnellement des valeurs manquantes (~3–4 % des lignes). 
+Vous devrez les détecter et les traiter correctement avant l'entraînement. 
+ 
+ 
+EXERCICE 1 Chargement, Exploration et Qualité des Données 20 pts points 
+ 
+Objectif : Charger le dataset, comprendre sa structure, identifier les problèmes de qualité et formuler des 
+premières hypothèses sur les facteurs influençant les récoltes. 
+ 
+1.1  Chargement des données 
+Commencez par charger le fichier agriculture_burundi.csv et effectuez une première inspection. 
+ 
+import pandas as pd 
+import numpy as np 
+import matplotlib.pyplot as plt 
+import seaborn as sns 
+ 
+# Chargez le dataset ici 
+df = pd.read_csv('agriculture_burundi.csv') 
+
+===== PAGE 3 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 3 
+ 
+Q1. Combien y a-t-il de lignes et de colonnes dans ce dataset ? 
+↳  Quelle est la période couverte (années) ? 
+↳  Combien de provinces distinctes sont représentées ? 
+↳  Quelles sont les 6 cultures présentes ? 
+ 
+Q2. Affichez les types de données de chaque colonne (dtypes). Y a-t-il des types incohérents par 
+rapport à la description du dataset ? Si oui, lesquels et pourquoi ? 
+ 
+1.2  Qualité des données — Valeurs manquantes 
+ 
+Q3. Calculez le nombre et le pourcentage de valeurs manquantes pour chaque colonne. 
+↳  Quelles colonnes sont concernées ? 
+↳  Le taux de manquants est-il homogène entre les provinces et les cultures ? 
+ 
+Aide 
+Conseil : utilisez df.isnull().sum() et df.isnull().mean()*100 pour un premier aperçu. 
+ Pour croiser les manquants avec les provinces, pensez à groupby(). 
+ 
+Q4. Choisissez et justifiez une stratégie pour traiter les valeurs manquantes de chaque colonne 
+concernée. 
+↳  Suppression des lignes ? Imputation par la moyenne/médiane ? Imputation par groupe (culture, 
+province) ? 
+↳  Appliquez votre stratégie et vérifiez qu'il n'y a plus de valeurs manquantes. 
+ 
+1.3  Exploration statistique 
+ 
+Q5. Calculez les statistiques descriptives (moyenne, médiane, écart-type, min, max) pour les variables 
+numériques. 
+↳  Quelle culture présente le rendement moyen le plus élevé ? Le plus faible ? 
+↳  Quelle province a la pluviométrie moyenne la plus forte ? 
+ 
+Q6. Analysez la distribution de la variable cible bonne_recolte. 
+↳  Quelle est la proportion de bonnes récoltes (classe 1) et de mauvaises récoltes (classe 0) ? 
+↳  Ce dataset est-il équilibré ? Quelle conséquence cela peut-il avoir sur l'entraînement ? 
+ 
+Q7. Produisez au minimum 3 visualisations pertinentes et commentez chacune. 
+
+===== PAGE 4 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 4 
+↳  Distribution du rendement par culture (boxplot) 
+↳  Évolution de la production totale par année (lineplot) 
+↳  Proportion de bonnes récoltes selon l'utilisation d'engrais (barplot) 
+↳  Matrice de corrélation entre les variables numériques (heatmap) 
+ 
+EXERCICE 2 Prétraitement et Préparation des Données 15 pts points 
+ 
+Objectif : Transformer les données brutes en un format utilisable par les algorithmes de Machine Learning 
+: encodage des variables catégorielles,  normalisation des variables numériques et construction des jeux 
+train/test. 
+ 
+2.1  Encodage des variables catégorielles 
+ 
+Q8. Identifiez toutes les variables catégorielles du dataset. 
+↳  Pourquoi ne peut-on pas les utiliser directement comme variables d'entrée ? 
+↳  Quelle est la différence entre LabelEncoder et pd.get_dummies() (One-Hot Encoding) ? 
+↳  Dans ce contexte, laquelle est la plus adaptée pour la variable province ? Pour culture ? Pour 
+saison ? Justifiez. 
+ 
+Q9. Appliquez l'encodage choisi à chaque variable catégorielle. 
+↳  Combien de colonnes le dataset compte-t-il après encodage ? 
+↳  Avez-vous pensé au problème de la « dummy variable trap » avec get_dummies ? 
+ 
+Rappel important 
+Rappel — Dummy variable trap : si vous utilisez g et_dummies sur une variable à k 
+catégories, vous obtenez k colonnes. Il faut en supprimer une (drop_first=True) pour éviter  
+la multicolinéarité. Ce problème affecte surtout la régression logistique. 
+ 
+2.2  Sélection des variables et normalisation 
+ 
+Q10. Définissez votre matrice de features X et votre vecteur cible y. 
+↳  Quelles colonnes excluez-vous et pourquoi ? (Ex : rendement_t_ha et production_totale_t — 
+pourquoi ?) 
+↳  Y a-t-il un risque de data leakage si on garde rendement_t_ha dans X ? 
+ 
+Q11. Appliquez une normalisation sur les variables numériques de X. 
+↳  Pourquoi la normalisation est-elle nécessaire pour la régression logistique mais moins critique 
+pour les arbres de décision ? 
+
+===== PAGE 5 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 5 
+↳  Après normalisation, quelle est la moyenne et l'écart-type des colonnes numériques ? 
+ 
+2.3  Division Train / Test 
+ 
+Q12. Divisez les données en 80 % train et 20 % test. 
+↳  Utilisez stratify=y. Expliquez pourquoi cette option est importante ici. 
+↳  Vérifiez que la proportion de bonnes/mauvaises récoltes est similaire dans les deux ensembles. 
+↳  Pourquoi faut-il impérativement fixer random_state ? Que se passerait-il sans ? 
+ 
+ 
+EXERCICE 3 Arbre de Décision — Entraînement et Visualisation 20 pts points 
+ 
+Objectif : Construire un arbre de décision pour prédire les bonnes récoltes, analyser les règles apprises 
+et étudier l'impact des hyperparamètres. 
+ 
+3.1  Entraînement du modèle de base 
+ 
+Q13. Entraînez un arbre de décision avec max_depth=4 et criterion='gini'. 
+↳  Quelle est l'accuracy obtenue sur le jeu de test ? 
+↳  Affichez le rapport de classification complet (precision, recall, F1 pour chaque classe). 
+ 
+Q14. Calculez et affichez la matrice de confusion. 
+↳  Combien de fausses alertes (faux positifs) le modèle produit-il ? 
+↳  Combien de mauvaises récoltes le modèle a-t-il manqué (faux négatifs) ? 
+↳  Dans un contexte agricole réel, quel type d'erreur est le plus coûteux pour un agriculteur ? 
+ 
+3.2  Visualisation de l'arbre 
+ 
+Q15. Visualisez l'arbre de décision construit (plot_tree). 
+↳  Quelle est la variable utilisée pour le premier split (racine de l'arbre) ? 
+↳  Interpréter ce premier noeud : quelle est la règle apprise et que signifie-t-elle agronomiquement ? 
+↳  L'arbre utilise-t-il la pluviométrie dans ses premières décisions ? Cela vous surprend-il ? 
+ 
+Q16. Affichez l'importance des variables (feature_importances_). 
+↳  Les 3 variables les plus importantes sont-elles cohérentes avec votre intuition agronomique ? 
+↳  La variable utilisation_engrais est-elle importante ? Quel message cela envoie-t-il aux décideurs 
+? 
+
+===== PAGE 6 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 6 
+ 
+3.3  Impact des hyperparamètres — Analyse de l'overfitting 
+ 
+Q17. Faites varier max_depth de 1 à 20 et tracez un graphique montrant l'accuracy train ET test en 
+fonction de la profondeur. 
+↳  À partir de quelle profondeur observe-t-on un surapprentissage (overfitting) ? 
+↳  Quelle profondeur offre le meilleur équilibre biais/variance ? 
+↳  Expliquez en vos propres mots le phénomène d'overfitting dans le contexte agricole. 
+ 
+Aide 
+Piste de code : utilisez une boucle for depth in range(1, 21) pour entraîner un arbre à chaque 
+profondeur, calculez train_score et test_score, stockez dans des listes, puis tracez avec 
+plt.plot(). 
+ 
+ 
+EXERCICE 4 Forêt Aléatoire — Robustesse et Comparaison 20 pts points 
+ 
+Objectif : Entraîner une forêt aléatoire, comprendre pourquoi elle performe mieux qu'un seul arbre et 
+analyser sa robustesse par validation croisée. 
+ 
+4.1  Entraînement de la forêt aléatoire 
+ 
+Q18. Entraînez une forêt aléatoire avec n_estimators=100 arbres. 
+↳  Comparez immédiatement son accuracy avec celle de l'arbre de décision (exercice 3). 
+↳  La forêt est-elle meilleure ? De combien de points d'accuracy ? 
+ 
+Q19. Expliquez en vos propres mots pourquoi une forêt de 100 arbres est généralement plus 
+performante qu'un seul arbre de décision. 
+↳  Qu'est-ce que le bagging ? 
+↳  Qu'apporte la sélection aléatoire des features à chaque noeud (paramètre max_features) ? 
+↳  La forêt peut-elle surapprendire ? Dans quelles conditions ? 
+ 
+4.2  Validation croisée (Cross-Validation) 
+ 
+Q20. Évaluez la forêt aléatoire par validation croisée à 5 folds (cross_val_score). 
+↳  Quelle est la moyenne et l'écart-type de l'accuracy sur les 5 folds ? 
+↳  Comparez avec l'accuracy simple sur le jeu de test. Y a-t-il une grande différence ? 
+
+===== PAGE 7 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 7 
+↳  Pourquoi la validation croisée est-elle une mesure plus fiable de la performance réelle ? 
+ 
+Rappel 
+La validation croisée divise les données en k groupes (folds). Le modèle est entraîné k fois, 
+chaque fois en utilisant k-1 folds pour l'entraînement et 1 fold pour le test. La performance 
+finale est la moyenne sur les k évaluations. 
+ 
+4.3  Importance des variables et analyse 
+ 
+Q21. Affichez l'importance des variables de la forêt aléatoire sous forme de graphique à barres 
+horizontales (triées du plus important au moins important). 
+↳  Comparez le top-5 des variables importantes avec celui de l'arbre de décision. 
+↳  Y a-t-il des différences ? Lesquelles ? Comment les expliquer ? 
+ 
+Q22. Faites varier n_estimators (nombre d'arbres) de 10 à 500 et observez l'impact sur l'accuracy test. 
+↳  À partir de combien d'arbres la performance se stabilise-t-elle ? 
+↳  Quel est le compromis à faire entre nombre d'arbres et temps de calcul ? 
+ 
+ 
+EXERCICE 
+5 
+Régression Logistique — Interprétabilité et Courbe 
+ROC 
+20 pts points 
+ 
+Objectif : Entraîner une régression logistique, interpréter ses coefficients en termes agronomiques et 
+comparer les trois modèles sur la courbe ROC. 
+ 
+5.1  Entraînement et interprétation des coefficients 
+ 
+Q23. Entraînez une régression logistique avec max_iter=1000. 
+↳  Quelles sont les variables avec les coefficients les plus positifs ? Que signifient-elles ? 
+↳  Quelles variables ont des coefficients négatifs ? Cela est-il cohérent avec la réalité ? 
+ 
+Aide à l'interprétation 
+Dans une régression logistique, un  coefficient positif signifie que quand la variable 
+augmente, la probabilité d'avoir une bonne récolte augmente aussi. Un coefficient négatif 
+signifie l'inverse. Attention : les coefficients ne sont interprétables que si les variables sont  
+normalisées (ce que vous avez fait à l'étape 2). 
+ 
+
+===== PAGE 8 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 8 
+Q24. La régression logistique est-elle plus ou moins performante que les deux modèles précédents en 
+termes d'accuracy ? Proposez une explication. 
+↳  La régression logistique suppose une relation linéaire entre les features et la log-probabilité. 
+Cette hypothèse est-elle réaliste pour des données agricoles ? 
+ 
+5.2  Courbe ROC et AUC — Comparaison des trois modèles 
+ 
+Q25. Tracez sur un même graphique les courbes ROC des trois modèles (Arbre de Décision, Forêt 
+Aléatoire, Régression Logistique). 
+↳  Calculez l'AUC (Area Under Curve) pour chaque modèle. 
+↳  Quel modèle a la meilleure AUC ? Cela correspond-il à votre classement par accuracy ? 
+ 
+Q26. Expliquez ce que mesure l'AUC et en quoi elle est plus informative que la simple accuracy. 
+↳  Un modèle avec une accuracy de 75 % peut-il avoir une AUC proche de 0.5 ? Dans quel cas ? 
+↳  Dans notre contexte (prédiction de récoltes), faut-il maximiser l'accuracy ou l'AUC ? Pourquoi ? 
+ 
+ 
+EXERCICE 6 Prédiction sur de Nouvelles Données Réelles 15 pts points 
+ 
+Objectif : Utiliser les modèles entraînés pour simuler des prédictions concrètes sur des scenarios 
+agricoles au Burundi et comparer les recommandations des trois modèles. 
+ 
+6.1  Scenarios de prédiction 
+ 
+Vous trouverez ci-dessous 4 scenarios agricoles réels au Burundi. Pour chaque scenario, utilisez vos 
+trois modèles pour prédire si la récolte sera bonne ou mauvaise, et donnez la probabilité associée. 
+ 
+Province Culture Altitude Pluie 
+(mm) 
+Temp 
+(°C) 
+Engrais Irrigation 
+Kayanza Maïs 1 980 m 920 17.8 Oui Non 
+Bubanza Manioc 790 m 550 25.4 Non Oui 
+Gitega Haricot 1 720 m 430 18.2 Non Non 
+Cibitoke Patate 
+douce 
+810 m 810 24.1 Oui Oui 
+ 
+Q27. Pour chaque scenario, appliquez les trois modèles et remplissez le tableau suivant. 
+ 
+Scenario Arbre de Décision Forêt Aléatoire Régression Logistique 
+
+===== PAGE 9 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 9 
+Kayanza – Maïs Bonne/Mauvaise — % Bonne/Mauvaise — % Bonne/Mauvaise — % 
+Bubanza – 
+Manioc 
+Bonne/Mauvaise — % Bonne/Mauvaise — % Bonne/Mauvaise — % 
+Gitega – Haricot Bonne/Mauvaise — % Bonne/Mauvaise — % Bonne/Mauvaise — % 
+Cibitoke – Patate 
+douce 
+Bonne/Mauvaise — % Bonne/Mauvaise — 
+__ % 
+Bonne/Mauvaise — % 
+ 
+6.2  Interprétation et recommandations 
+ 
+Q28. Les trois modèles sont-ils unanimes pour chaque scenario ? Y a-t-il des désaccords ? 
+↳  Que faire lorsque les modèles ne sont pas d'accord ? Comment décider ? 
+↳  Quel(s) scenario(s) présente(nt) le plus d'incertitude (probabilités proches de 50 %) ? 
+ 
+Q29. Pour le scenario 3 (Gitega – Haricot, pluviométrie très faible de 430 mm), le modèle prédit-il 
+une mauvaise récolte ? 
+↳  Cette prédiction est-elle cohérente avec ce que vous savez de l'agriculture au Burundi ? 
+↳  Quelles actions concrètes un agronome pourrait-il recommander à l'agriculteur de Gitega ? 
+ 
+Q30. Réflexion finale : imaginez que vous êtes conseiller agricole au Ministère de l'Agriculture du 
+Burundi. 
+↳  Lequel des trois modèles recommanderiez-vous de déployer en production ? Pourquoi ? 
+↳  Quelles données supplémentaires permettraient d'améliorer les prédictions ? 
+↳  Quelles limites votre modèle a-t-il ? Peut-on lui faire entièrement confiance ? 
+ 
+ 
+EXERCICE 7 Application Web — Déploiement du Modèle Sur 15 pts points 
+ 
+Objectif : Développer une application web permettant à n'importe quel utilisateur (notamment 
+l'enseignant) de saisir les caractéristiques d'une parcelle agricole et d'obtenir en temps réel une 
+prédiction de récolte. 
+ 
+Important 
+Réalisez d'abord le pipeline ML complet (exercices 1–6), sauvegardez vos modèles, 
+puis développez l'application web. L'enseignant testera votre application en ligne 
+avec ses propres données agricoles. 
+ 
+7.1  Ce que l'application doit faire 
+
+===== PAGE 10 =====
+TP Intelligence Artificielle — Agriculture au Burundi Bac4 — Génie Logiciel 
+Prédiction des Récoltes au Burundi   Page 10 
+ 
+• Afficher un formulaire de saisie avec tous les champs du dataset (province, culture, altitude, 
+pluviométrie, température, superficie, engrais, irrigation) 
+• Permettre à l'utilisateur de choisir le modèle à utiliser (Arbre de Décision, Forêt Aléatoire, 
+Régression Logistique) 
+• Afficher la prédiction (Bonne récolte / Mauvaise récolte) avec la probabilité associée 
+• Afficher les métriques globales du modèle sélectionné (accuracy, F1, AUC) 
+• (Optionnel) Afficher un graphique d'importance des variables pour la prédiction 
+ 
+7.2  Livrables à remettre 
+ 
+1. Lien GitHub du projet (dépôt public) avec un README expliquant comment lancer l'application 
+2. URL de l'application déployée et fonctionnelle (accessible par l'enseignant) 
+3. Capture d'écran de l'interface avec au moins une prédiction effectuée 
+RÉCAPITULATIF — NOTATION ET LIVRABLES 
+ 
+Ex. Intitulé Points Compétence 
+visée 
+1 Chargement, Exploration, Qualité des 
+données 
+20 pts Analyse 
+exploratoire 
+2 Prétraitement et préparation 15 pts Feature 
+engineering 
+3 Arbre de décision + overfitting 20 pts Modélisation & 
+interprétation 
+4 Forêt aléatoire + validation croisée 20 pts Ensemble learning 
+5 Régression logistique + courbe ROC 20 pts Comparaison de 
+modèles 
+6 Prédiction sur nouveaux scenarios 15 pts Déploiement & 
+réflexion 
+7 Application web déployée (BONUS) 15 pts Ingénierie 
+logicielle 
+ 
+Livrables attendus 
+ 
+4. Un notebook Jupyter (.ipynb) bien structuré et commenté, avec toutes les cellules exécutées 
+5. Les fichiers modèles sauvegardés (.pkl) pour les 3 algorithmes 
+6. Un court rapport écrit (1 page max) répondant aux questions de réflexion 29 et 30 
+7. URL de l'application web déployée + lien GitHub 

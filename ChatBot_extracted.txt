@@ -1,0 +1,60 @@
+
+
+===== CODE CELL 1 =====
+import random
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+
+# Données d'entraînement (questions + intentions)
+questions = [
+    "bonjour", "salut", "hello",
+    "comment ça va", "tu vas bien",
+    "au revoir", "bye",
+    "quel est ton nom", "qui es tu",
+    "merci beaucoup", "merci"
+]
+
+intents = [
+    "salutation", "salutation", "salutation",
+    "etat", "etat",
+    "au_revoir", "au_revoir",
+    "identite", "identite",
+    "remerciement", "remerciement"
+]
+
+# Réponses possibles
+responses = {
+    "salutation": ["Bonjour ", "Salut !", "Hello !"],
+    "etat": ["Je vais bien merci !", "Toujours opérationnel "],
+    "au_revoir": ["Au revoir ", "À bientôt !"],
+    "identite": ["Je suis un chatbot intelligent créé avec Python "],
+    "remerciement": ["Avec plaisir !", "Je t’en prie "]
+}
+
+# Vectorisation du texte
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(questions)
+
+# Modèle IA
+model = LogisticRegression()
+model.fit(X, intents)
+
+# Boucle de discussion
+print("Chatbot IA (tape 'quit' pour quitter)\n")
+
+while True:
+    user_input = input("Toi: ")
+
+    if user_input.lower() == "quit":
+        print("Chatbot: Au revoir ")
+        break
+
+    # Transformation du texte
+    X_test = vectorizer.transform([user_input])
+
+    # Prédiction
+    intent = model.predict(X_test)[0]
+
+    # Réponse
+    response = random.choice(responses[intent])
+    print("Chatbot:", response)

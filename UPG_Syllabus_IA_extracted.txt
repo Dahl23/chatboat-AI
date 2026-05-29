@@ -1,0 +1,2605 @@
+
+
+===== PAGE 1 =====
+ 
+ 
+ 
+  
+      
+Dr. Jean Pierre Ntayagabiri 
+Intelligence Artificielle-IA 
+ 
+
+===== PAGE 2 =====
+ 
+1 
+ 
+Table des Matières  
+Chapitre 1 : Introduction à l'Intelligence Artificielle......................................................................... 4 
+1. C’est quoi l’intelligence ? ............................................................................................................ 4 
+2. L'intelligence du vivant ............................................................................................................... 6 
+3. Définition et concepts clés de l'intelligence artificielle ............................................................... 7 
+4. Différents domaines de l’Intelligence Artificielle ....................................................................... 8 
+Chapitre 2 : Concepts fondamentaux de l'Apprentissage Automatique ........................................ 10 
+1. Qu'est-ce que l'Apprentissage Automatique ? ............................................................................... 10 
+2.Définition formelle ......................................................................................................................... 10 
+2.1 La notion d'exemple ................................................................................................................ 10 
+2.2 Définition de Tom Mitchell (1997) ......................................................................................... 11 
+3. Types d’apprentissage automatique .............................................................................................. 12 
+4. Apprentissage automatique dans la pratique ............................................................................. 13 
+5. Pourquoi est-ce difficile ? Le cœur du problème .......................................................................... 15 
+5.1 Le problème de la généralisation ............................................................................................. 15 
+5.2 Le dilemme biais-variance ...................................................................................................... 16 
+5.3 Le théorème "No Free Lunch"................................................................................................. 16 
+6 Comment un algorithme apprend-il ? ............................................................................................. 16 
+6.1 L'idée de la fonction de perte................................................................................................... 16 
+Chapitre 3. Les arbres de décision ..................................................................................................... 17 
+1. Motivation — Un problème concret pour commencer .................................................................. 18 
+2. Définition et structure d'un arbre de décision ................................................................................ 18 
+2.1 Vocabulaire de base ................................................................................................................. 18 
+2.2 Types de tests aux nœuds ........................................................................................................ 19 
+3 Comment construire un arbre ? Le problème d'optimisation ......................................................... 19 
+3.1 Pourquoi ne peut-on pas trouver l'arbre optimal ? ................................................................... 19 
+3.2 Qu'est-ce qu'une "bonne" division ? ........................................................................................ 20 
+4 Mesures d'impureté......................................................................................................................... 20 
+4.1 L'entropie de Shannon ............................................................................................................. 20 
+4.2 L'indice de Gini ....................................................................................................................... 22 
+4.3 L'erreur de classification ......................................................................................................... 23 
+5 Le Gain d'Information .................................................................................................................... 23 
+5.1 Définition ................................................................................................................................. 23 
+5.2 Calcul pas à pas — Exemple complet ..................................................................................... 24 
+5.3 Biais du gain d'information vers les features à haute cardinalité ............................................ 25 
+6 Le problème du surapprentissage et l'élagage ................................................................................ 26 
+6.1 Un arbre peut mémoriser parfaitement .................................................................................... 26 
+
+===== PAGE 3 =====
+ 
+2 
+ 
+6.2 Méthodes de contrôle de la profondeur ................................................................................... 26 
+Chapitre 4 : Systèmes Experts et Applications ................................................................................. 28 
+1. Introduction ................................................................................................................................... 28 
+2. Les domaines d’application des systèmes experts ......................................................................... 28 
+3. Définition....................................................................................................................................... 28 
+4. Composants d’un système expert .................................................................................................. 29 
+4.1 La base de connaissance .......................................................................................................... 29 
+4.2 Le moteur d’inférence ............................................................................................................. 30 
+5 Fonctionnement et caractéristiques d’un moteur d’inférence ......................................................... 31 
+5.1 Cycles d’un moteur d’inférence .............................................................................................. 31 
+5.2 Les caractéristiques d’un moteur d’inférence .......................................................................... 33 
+6 Type de moteurs d’inférence .......................................................................................................... 36 
+6.1 Moteur d’inférence à chaînage avant ...................................................................................... 36 
+6.2 Moteur d’inférence à chaînage arrière ..................................................................................... 38 
+6.3 Moteur d’inférence à chaînage mixte ...................................................................................... 40 
+7 Problèmes liés aux systèmes experts .............................................................................................. 41 
+Chapitre 5 : La régression linéaire .................................................................................................... 42 
+1. Qu'est-ce que la régression linéaire ? ............................................................................................ 42 
+2. Formule de base de la régression linéaire : ................................................................................... 42 
+3. Minimisation de l'erreur (méthode des moindres carrés) : ............................................................ 47 
+4. Cas d'utilisation de la régression linéaire : .................................................................................... 47 
+Chapitre 6 : La régression Logistique ............................................................................................... 48 
+1. Introduction et objectifs ................................................................................................................. 48 
+2. La fonction logistique (sigmoïde) ................................................................................................. 48 
+3. Comportement de la fonction sigmoïde : ...................................................................................... 49 
+4. Modèle de régression logistique .................................................................................................... 50 
+5. Fonction de coût (ou log-vraisemblance) ...................................................................................... 52 
+6. Optimisation - Descente de gradient ............................................................................................. 54 
+7. Cas d’utilisation ............................................................................................................................. 56 
+Chapitre 7 : Forêts Aléatoires ............................................................................................................ 57 
+1. Définition....................................................................................................................................... 57 
+2. D’où vient cette « variété » entre les arbres d’une forêt aléatoire ? .............................................. 59 
+3. Comment fonctionne une forêt aléatoire ? .................................................................................... 61 
+Chapitre 8 : Réseaux de Neurones Artificiels (ANN) ....................................................................... 70 
+1. Introduction aux Réseaux de Neurones Artificiels (ANN) ........................................................... 70 
+1.1. Le Neurone ............................................................................................................................. 70 
+1.2. Rétropropagation (Backpropagation) : ................................................................................... 71 
+
+===== PAGE 4 =====
+ 
+3 
+ 
+2. Mise à jour des poids ..................................................................................................................... 72 
+3. Cas d'Utilisation des Réseaux de Neurones................................................................................... 73 
+Chapitre 9 : Fondements Probabilistes et Classificateur de Bayes ................................................. 74 
+1. Motivation — Raisonner sous incertitude ..................................................................................... 74 
+Le test donne un faux positif dans 2% des cas (sur des personnes saines) ............................................ 74 
+2. Rappels de probabilités ................................................................................................................. 74 
+2.1 Probabilité conditionnelle ........................................................................................................ 74 
+2.2 La loi des probabilités totales .................................................................................................. 74 
+2.3 Indépendance ........................................................................................................................... 75 
+2.3 Le Théorème de Bayes ............................................................................................................ 75 
+4. L'Apprentissage Bayésien ............................................................................................................. 77 
+4.1 Bayes appliqué à l'apprentissage ............................................................................................. 77 
+4.2 Vraisemblance et données i.i.d. ............................................................................................... 77 
+5. Le Classificateur Naïf de Bayes .................................................................................................... 78 
+5.1 Le problème de classification probabiliste .............................................................................. 78 
+5.2 L'hypothèse "naïve" d'indépendance conditionnelle ............................................................... 78 
+ 
+  
+
+===== PAGE 5 =====
+ 
+4 
+ 
+Chapitre 1 : Introduction à l'Intelligence Artificielle  
+1. C’est quoi l’intelligence ? 
+Il est important de comprendre tout d'abord ce qu'est l'intelligence. De nombreuses idées reçues 
+circulent sur ce sujet, et peuvent gêner, voire rendre impos sible, la compréhension du champ 
+de l'intelligence artificielle. Le terme d'intelligence vient du latin « intelligentia » qui signifie 
+la faculté de comprendre et de mettre en relation des éléments entre eux. 
+L'intelligence est cependant multiple, et tous les auteurs actuels s'accordent sur le fait qu'il n'y 
+a pas une mais des intelligences, et que chacun d'entre nous peut présenter des forces et/ou des 
+faiblesses dans les différentes formes d'intelligence. La théorie des intelligences multiples, 
+proposée initialement par Howard Gardner en 1 983 (professeur à Harvard et travaillant sur les 
+enfants en échec scolaire), liste sept formes d'intelligence, auxquelles deux nouvelles se sont 
+ajoutées pour arriver à la liste actuelle des neuf formes d'intelligence : 
+ L'intelligence logico-mathématique : elle représente la capacité à travailler à l'aide de 
+chiffres, à analyser des situations, à mettre au point des raisonnements. Elle est mise en 
+avant chez les scientifiques, en particulier en physique et mathématiques. 
+ L'intelligence visuo-spatiale : elle indique la capacité à se représenter un objet ou un 
+environnement en 3D, et est utilisée pour suivre une carte, se rappeler un chemin ou 
+imaginer ce que donne une forme dans l'espace à partir de son plan. Elle est néces saire 
+par exemple aux artistes, aux architectes ou aux conducteurs de taxi. 
+ L'intelligence verbo-linguistique : il s'agit de la capacité à comprendre et à énoncer 
+des idées par le langage. Elle requiert une bonne connaissance et maîtrise du 
+vocabulaire, ainsi que de la syntaxe et des figures de style. Elle aide les avocats, les 
+politiciens ou les auteurs. 
+ L'intelligence intrapersonnelle : elle est la capacité à avoir une image fidèle de soi, ce 
+qui signifie pouvoir déterminer son état émotionnel, ses envies , ses forces et ses 
+faiblesses. 
+ L'intelligence interpersonnelle : elle est la capacité à comprendre les autres et à réagir 
+de la façon adéquate. Elle est donc liée à la notion d'empathie, à la tolérance, à la 
+sociabilité. Mais elle peut aussi permettre de manipuler et est ainsi très utilisée par les 
+leaders de secte. Elle a aussi inspiré des techniques commerciales et de négociation. 
+ L'intelligence corporelle/kinesthésique : elle est la capacité à avoir une représentation 
+mentale de son corps dans l'espace et à pouvoir mener un mouvement particulier. Très 
+
+===== PAGE 6 =====
+ 
+5 
+ 
+utilisée chez les athlètes, c'est elle qui permet d'avoir le bon geste au bon moment. Elle 
+est utilisée dans les travaux manuels et de précision (par exemple pour un chirurgien), 
+mais permet aussi l'express ion corporelle des émotions et est à ce titre nécessaire aux 
+danseurs ou aux acteurs. 
+ L'intelligence naturaliste : c'est la capacité à trier, organiser et hiérarchiser les objets 
+qui nous entourent. Elle permet ainsi de définir des espèces, des sous -espèces, ou de 
+construire des classifications. Elle est par exemple très utilisée par les botanistes, les 
+paléontologues ou les biologistes. 
+ L'intelligence musicale : elle est la capacité à reconnaître les mélodies, les notes et les 
+harmonies, ou à les créer. Elle est ainsi nécessaire aux compositeurs et aux chanteurs et 
+s'exprime chez tous les mélomanes. 
+ L'intelligence existentielle ou spirituelle : elle est la capacité à se poser des questions 
+sur le sens de la vie, sur notre but. Elle se rapproche de notre not ion de moralité. Elle 
+n'est pas forcément liée à la notion de religion mais plus à notre positionnement par 
+rapport au reste de l'univers. 
+De nombreux tests ont essayé de mesurer l'intelligence, le plus connu étant le test de Q.I. 
+(quotient intellectuel). Ils sont cependant très critiqués. En effet, ils ne peuvent pas mesurer 
+toute l'amplitude des formes d'intelligence et se concentrent principalement sur les intelligences 
+logico-mathématiques et visuospatiale (même si l'intelligence verbo -linguistique est en partie 
+testée). Toutes les autres formes d'intelligence sont ignorées. 
+De plus, les principaux tests de Q .I. que l'on trouve sont biaisés par l'expérience : il suffit de 
+faire et refaire plusieurs fois des entraînements sur ces tests pour obtenir des r ésultats 
+significativement améliorés. Pour autant, est on devenu plus intelligent ? La répétition et le 
+bachotage ne donnent que des habitudes, des réflexes et des bonnes pratiques, pour ces types 
+de problèmes précisément, mais cet apprentissage n'est pas valorisable. 
+Le système scolaire lui -même met principalement en avant ces trois formes d'intelligence 
+(logico-mathématique, visuo -spatiale et verbo -linguistique). Les autres formes d'intelligence 
+sont délaissées, et étudiées dans les matières dites "annexe s" (sport, musique, technologie. . .) 
+et certaines ne sont pas du tout abordées (intelligences intra, interpersonnelle et existentielle). 
+Il faut donc accepter que l'intelligence n'est pas facilement mesurable, ni facilement 
+définissable, car elle couvre de trop nombreux domaines. De plus, certains types sont souvent 
+sous-estimés voire ignorés. La meilleure définition est donc aussi la plus vaste : l'intelligence 
+
+===== PAGE 7 =====
+ 
+6 
+ 
+est la capacité à s'adapter . Elle permet ainsi de résoudre les problèmes auxquels on est 
+confronté. 
+2. L'intelligence du vivant 
+L'intelligence est trop souvent liée de près à celle de l'humain. En effet, les Hommes ont cherché 
+à se montrer supérieurs aux animaux, et tout ce qui pouvait les différencier était bon à prendre 
+pour se distinguer des « bêtes ». Ce terme est d'ailleurs très significatif : il désigne à la fois les 
+animaux et les personnes étant considérées comme ne possédant que peu d'intelligence. 
+Pourtant, la définition de l'intelligence comme capacité à s'adapter permet de prendre en compte 
+de nombreux comportements que l'on trouve chez les animaux, et même plus globalement chez 
+les êtres vivants. 
+Quand on parle « intelligence du vivant », on pense souvent aux grands singes (capables 
+d'apprendre le langage des signes et de communiquer grâce à lui), aux chiens ou aux dauphins. 
+On peut aussi citer le cas de Hans le malin, un cheval qui « savait » compter et répondait par 
+des coups de sabot sur le sol (par exemple à la question « Combien font 3 plus 4 ? »1 il tapait 7 
+fois du pied). En réalité, il  arrivait à détecter les micromouvements sur les visages du public 
+pour savoir quand il devait s'arrêter : il avait ainsi adapté son comportement à son 
+environnement pour obtenir des friandises et des caresses. 
+On peut aussi parler des animaux montrant une  intelligence collective remarquable. Il y a par 
+exemple les termites qui sont capables de construire des nids immenses et climatisés, faits de 
+multitudes de couloirs et de chambres. Les fourmis sont un autre  très bon exemple avec la 
+présence de rôles : re ine, ouvrières, nourrices, gardiennes, combattantes et même éleveuses, 
+étant donné que certaines espèces « élèvent » des pucerons et les protègent des coccinelles pour 
+ensuite les « traire » et manger le miellat produit. 
+Chez les abeilles, l'intelligence linguistique est très forte. En effet, lorsqu'une abeille rentre à 
+la ruche après avoir trouvé une source de pollen, elle va l'indiquer à ses pairs via une danse. En 
+fonction de la forme et de la vitesse de celle-ci, les autres abeilles en déduisent la distance. En 
+regardant l'angle fait avec Je soleil, elles ont alors l'indication de direction. La danse en elle -
+même peut les renseigner sur la source de nourriture (type de fleur par exemple). 
+Mais l'intelligence est en réalité présente pour toutes les formes  vivantes. De nombreuses 
+espèces végétales se sont adaptées pour attirer certaines proies (comme les plantes carnivores) 
+
+===== PAGE 8 =====
+ 
+7 
+ 
+ou les insectes qui vont disséminer leur pollen. Au contraire, certaines se protègent via des sucs 
+toxiques ou des épines. 
+D'autres enfin attirent les prédateurs naturels de leurs propres prédateurs. Par exemple, certaines 
+plantes de la famille des Acacias attirent les fourmis pour se protéger des herbivores. Elles 
+appliquent ainsi le fameux dicton « les ennemis de mes ennemis sont mes amis ». 
+On peut aller encore plus loin. Certains champignons ont développé des stratégies très 
+complexes pour survivre et se reproduire, et certains présents dans les forêts amazoniennes du 
+Brésil sont ainsi capables d'utiliser des fourmis comme hôte (en étant ingérés par exemple sous 
+forme de spores), d'en prendre le contrôle temporaire (via des sécrétions attaquant les fonctions 
+cérébrales, ce qui conduit la fourmi à s'éloigner du nid, à grimper le plus haut possible et à 
+finalement s'attacher à une feuille), et de s'en servir comme source nutritive puis comme point 
+de départ d'une nouvelle envolée de spores. 
+Certes, tous les individus d'une même espèce n'ont pas le même niveau d'intelligence, mais il 
+est impossible de nier que l'on peut trouver des formes d'intelligence dans les espèces 
+vivantes. 
+3. Définition et concepts clés de l'intelligence artificielle 
+L'intelligence artificielle (IA) représente un domaine scientifique interdisciplinaire visant à 
+développer des systèmes capables d'accomplir des tâches qui,  traditionnellement, nécessitent 
+l'intelligence humaine. Cette discipline se situe à l'intersection de l'informatique, des 
+mathématiques, de la linguistique, de la psychologie cognitive et des neurosciences. 
+La définition même de l'IA a évolué au fil du temps et reste sujet à débat parmi les chercheurs. 
+John McCarthy, considéré comme l'un des pères fondate urs de l'IA, l'a définie comme «  la 
+science et l'ingénierie de la création de machines intelligentes ». Marvin Minsky, autre pionnier 
+du domaine, parlait de « la construction de programmes informatiques qui s'engagent dans des 
+tâches qui sont, pour l'instant, accomplies de façon plus satisfaisante par des êtres humains car 
+elles demandent des processus mentaux de haut niveau tels que : l'apprentissage perce ptuel, 
+l'organisation de la mémoire et le raisonnement critique. » 
+Les concepts clés de l'IA incluent : 
+1. L'agent intelligent : Entité qui perçoit son environnement via des capteurs et agit sur 
+cet environnement via des effecteurs, dans le but de maximiser s a mesure de 
+performance. 
+
+===== PAGE 9 =====
+ 
+8 
+ 
+2. La rationalité : Un agent est rationnel s'il choisit l'action qui maximise sa performance, 
+compte tenu des perceptions reçues jusqu'à présent. 
+3. L'environnement : Le contexte dans lequel l'agent opère, qui peut être totalement ou 
+partiellement observable, déterministe ou stochastique, épisodique ou séquentiel, 
+statique ou dynamique, discret ou continu. 
+4. L'apprentissage : Capacité d'un système à améliorer ses performances à travers 
+l'expérience sans être explicitement programmé pour chaque situation. 
+5. L'adaptation : Capacité d'un système à modifier son comportement pour faire face à 
+des changements dans son environnement. 
+6. L'autonomie : Mesure dans laquelle un agent peut opérer sans intervention humaine. 
+Dans le cadre académique, l'IA est souvent divisée en deux grandes approches : l'IA symbolique 
+(ou classique) et l'IA connexionniste. L'approche symbolique repose sur la manipulation de 
+symboles et de règles logiques, tandis que l'approche connexionniste s'inspire du 
+fonctionnement des neur ones biologiques et utilise des réseaux de neurones artificiels pour 
+apprendre à partir de données. 
+4. Différents domaines de l’Intelligence Artificielle 
+L'intelligence artificielle (IA) représente l'aspiration de l'humanité à doter les machines de 
+capacités intellectuelles et cognitives comparables à celles des êtres humains. Depuis son 
+émergence dans les années 1950, ce champ multidisciplinaire a non seulement transformé 
+notre approche de la technologie, mais il a également ouvert de nouvelles frontières dans la 
+façon dont nous interagissons avec le monde numérique et physique qui nous entoure. 
+L'IA englobe une vaste gamme de sous -domaines (Figure 1) spécialisés, chacun visant à 
+simuler ou à dépasser des aspects spécifiques de l'intelligence humaine. Par exem ple, le 
+traitement du langage naturel permet aux machines de comprendre et de générer du langage 
+humain, ouvrant la voie à des applications telles que la traduction automatique et l'analyse 
+de sentiment. La vision par ordinateur permet aux systèmes de perc evoir et d'interpréter 
+visuellement leur environnement, facilitant des avancées significatives dans la 
+reconnaissance d'objets, la navigation autonome et la réalité augmentée. 
+La robotique avancée, quant à elle, combine l'IA avec la mécanique pour créer de s robots 
+capables de manipuler des objets, d'interagir avec des humains et d'opérer dans des 
+
+===== PAGE 10 =====
+ 
+9 
+ 
+environnements complexes et changeants. Les algorithmes d'optimisation exploitent l'IA 
+pour résoudre des problèmes complexes d'affectation de ressources et de plan ification, 
+optimisant ainsi les opérations dans des domaines tels que la logistique, les transports et la 
+gestion des stocks. 
+L'apprentissage automatique et l’apprentissage profond constituent une pierre angulaire de 
+l'IA moderne, permettant aux systèmes informatiques d'apprendre à partir de données et de 
+s'améliorer progressivement sans intervention humaine directe. L'apprentissage supervisé, 
+non supervisé et par renforcement sont autant de techniques qui sous -tendent des 
+applications allant des recommandations personnalisées sur les plateformes de streaming à 
+la détection de fraudes dans les systèmes financiers. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 11 =====
+ 
+10 
+ 
+Chapitre 2 : Concepts fondamentaux de l'Apprentissage Automatique 
+1. Qu'est-ce que l'Apprentissage Automatique ? 
+Imaginez que vous devez écrire un programme informatique capable de reconnaître si un email 
+est un spam ou non. Comment ferais-tu ? 
+Approche classique (programmation traditionnelle) : 
+Vous pourriez essayer d'écrire des règles manuellement : 
+SI l'email contient "gagner de l'argent"  → spam 
+SI l'email contient "offre gratuite"      → spam 
+SI l'expéditeur est inconnu               → peut-être spam 
+... 
+Ça marche un peu. Mais très vite tu te heurtes à des problèmes : 
+ Les spammeurs changent leur vocabulaire en permanence 
+ Certains vrais emails parlent aussi d'argent 
+ Il faudrait des milliers de règles pour couvrir tous les cas 
+ Qui va maintenir toutes ces règles ? 
+L'idée de l'apprentissage automatique : 
+Au lieu d'écrire les règles toi-même, tu donnes au programme des milliers d'exemples d'emails 
+déjà classés (spam ou pas spam), et tu le laisses découvrir les règles lui-même. 
+Approche classique : 
+  Données + Règles humaines → Réponses 
+ 
+Apprentissage automatique : 
+  Données + Réponses → Règles découvertes automatiquement 
+C'est ce renversement fondamental qui définit l'apprentissage automatique. 
+2.Définition formelle 
+Avant de donner une définition, posons progressivement le cadre mathématique. 
+2.1 La notion d'exemple 
+
+===== PAGE 12 =====
+ 
+11 
+ 
+Dans un problème d'apprentissage, on dispose d'un ensemble d’exemples. Chaque exemple est 
+une observation du monde réel, décrite par un ensemble de caractéristiques (features en 
+anglais). 
+Exemple concret — Prédire si un étudiant réussira son examen : 
+Heures de travail Présences (%) À un tuteur Résultat 
+12 90 Oui Succès 
+3 45 Non Échec 
+8 75 Oui Succès 
+1 30 Non Échec 
+Chaque ligne est un exemple. Les trois premières colonnes sont les fonctionnalités (ce qu'on 
+observe). La dernière colonne est le label (ce qu'on veut prédire). 
+Formalisation :  
+On note un exemple (𝑥,𝑦) où :  
+𝑥=(𝑥1,𝑥2,…,𝑥𝑝)∈𝑋 
+est le vecteur de features (p caractéristiques), et 𝑦∈𝑌 est le label associé. L’en semble 
+d’apprentissage est : 
+𝐷={(𝑥1,𝑦1),(𝑥2,𝑦2),…,(𝑥𝑛,𝑦𝑛)} 
+n exemples, chacun avec p caractéristiques. 
+2.2 Définition de Tom Mitchell (1997) 
+La définition de la plus citée en apprentissage automatique est celle de Tom Mitchell : 
+"On dit qu'un programme apprend à partir d'une expérience E, relativement à une classe de 
+tâches T et une mesure de performance P, si sa performance sur les tâches T, réglées par P, 
+s'améliore avec l'expérience E." 
+Décomposons cette définition sur notre exemple de détection de spam : 
+
+===== PAGE 13 =====
+ 
+12 
+ 
+T (Tâche)         : classer un email en spam ou non-spam 
+E (Expérience)    : les milliers d'emails déjà classifiés 
+P (Performance)   : pourcentage d'emails correctement classifiés 
+Cette définition est importante car elle insist e sur trois éléments inséparables : une tâche 
+précise, des données, et une façon de mesurer le succès. 
+3. Types d’apprentissage automatique 
+Il existe plusieurs types d’apprentissage automatique, mais ils peuvent être largement classés 
+en quatre catégories principales : 
+ Apprentissage supervisé : dans l’apprentissage supervisé, l’algorithme est entraîné sur 
+un ensemble de données étiquetées. Cela signifie que chaque exemple d’entraînement 
+est composé d’un ensemble d’entrées et de sorties correctement identifiées et classifiées. 
+L’objectif de l’algorithme est d’apprendre à cartographier la relation entre les entrées 
+(inputs) et les sorties (outputs) en se basant sur les exemples fournis ; 
+ Apprentissage non supervisé :  dans l’apprentissage non supervisé, l’algor ithme est 
+entraîné sur des données non -étiquetées. L’objectif est de découvrir des structures 
+cachées dans les données. Sans réponses fournies, l’algorithme tente de regrouper ou de 
+réduire la dimensionnalité des données afin d’extraire des informations potentiellement 
+pertinentes ; 
+ Apprentissage semi -supervisé :  l’apprentissage semi -supervisé est une approche 
+intermédiaire qui utilise à la fois des données étiquetées et non étiquetées pour entraîner 
+des algorithmes. Généralement, une petite quantité de données étiquetées est utilisée en 
+conjonction avec une grande quantité de données non étiquetées. Cette approche est 
+utile lorsque l’étiquetage des données est coûteux ou prend du temps ; 
+ Apprentissage par renforcement :  dans l’apprentissage par renforcement , au lieu 
+d’établir les variables d’entrée avec les paramètres de sortie, l’algorithme apprend à 
+prendre des décisions en interagissant avec un environnement dynamique. Selon les 
+actions qu’il réalise, il reçoit des récompenses ou des pénalités, et l’objec tif est de 
+maximiser la récompense cumulée au fil du temps. 
+
+===== PAGE 14 =====
+ 
+13 
+ 
+ 
+Ces types d’apprentissage automatique permettent l’application de techniques d’AA à une 
+large gamme de problèmes, allant des prévisions financières à la création de systèmes 
+autonomes. 
+4. Apprentissage automatique dans la pratique 
+La mise en œuvre de l’apprentissage automatique passe par plusieurs étapes, en utilisant divers 
+outils et techniques pour assurer l’efficacité et la précision des modèles. Ci-après, le processus 
+de mise en œuvre et les outils les plus couramment utilisés sont détaillés. 
+Étapes pour implémenter l’apprentissage automatique 
+La mise en œuvre d’un projet de l’apprentissage automatique comprend plusieurs étapes 
+critiques, de la collecte des données à l’implémentation du modèle fi nal. Ces étapes sont 
+décrites en détail ci-dessous. 
+Collecte et préparation des données 
+La première étape fondamentale pour implémenter l’apprentissage automatique consiste à 
+collecter et à préparer les données. Ce processus comprend plusieurs sous-étapes : 
+ Collecte de données : réunir des données pertinentes qui seront utilisées pour entraîner 
+et tester le modèle. Cela peut inclure des données historiques provenant de systèmes 
+internes, des données de capteurs, des données issues des réseaux sociaux, etc. ; 
+ Nettoyage des données :  les données brutes contiennent souvent des valeurs 
+manquantes et des incohérences. Le nettoyage des données est essentiel pour éliminer 
+ces problèmes et garantir la qualité des données ; 
+
+
+===== PAGE 15 =====
+ 
+14 
+ 
+ Transformation des données :  cette étape co nsiste à standardiser et transformer les 
+données dans un format adapté au modèle. Cela peut inclure la conversion de variables 
+catégorielles en variables muettes ( dummy), la mise à l’échelle des caractéristiques, 
+etc. ; 
+ Division des données : séparer les données en ensembles d’entraînement, de validation 
+et de test pour évaluer les performances du modèle. 
+Entraînement et évaluation du modèle 
+Après la préparation des données, l’étape suivante consiste à entraîner et évaluer le modèle de 
+l’apprentissage automatique : 
+ Sélection de modèles : choisir l’algorithme d’apprentissage automatique le plus adapté 
+au problème, tel que la régression, les arbres de décision, les réseaux neuronaux, etc. ; 
+ Entraînement du modèle :  utiliser l’ensemble de données d’entraînement  pour lui 
+enseigner à reconnaître des modèles dans les données ; 
+ Évaluation du modèle : évaluer les performances du modèle en utilisant l’ensemble de 
+validation, en appliquant des métriques telles que l’exactitude, la précision, le rappel, le 
+score F1, entre autres. La matrice de confusion est souvent utilisée pour comprendre les 
+performances des modèles de classification. 
+Ajustement des hyperparamètres et prévisions 
+Après l’évaluation initiale, il est souvent nécessaire d’ajuster le modèle pour optimiser s es 
+performances : 
+ Réglage des hyperparamètres :  utiliser des techniques comme la recherche en grille 
+(grid search ) ou la recherche aléatoire ( random search ) pour trouver la meilleure 
+combinaison d’hyperparamètres qui maximise la performance du modèle ; 
+ Validation croisée : diviser l’ensemble de données en plusieurs parties et entraîner le 
+modèle plusieurs fois, en utilisant à chaque fois une partie différente comme ensemble 
+de test, afin de s’assurer que le modèle se généralise bien ; 
+ Prédictions :  utiliser le modèle entraîné et ajusté pour faire des prédictions sur de 
+nouvelles données, l’appliquant dans des situations pratiques et réelles. 
+ 
+
+===== PAGE 16 =====
+ 
+15 
+ 
+5. Pourquoi est-ce difficile ? Le cœur du problème 
+5.1 Le problème de la généralisation 
+Voici la question centrale de tout le cours, formulée simplement : 
+"Comment apprendre à partir d'exemples passés pour bien se comporter sur des 
+exemples futurs jamais vus ?" 
+C'est ce qu'on appelle la généralisation. C'est différent de la mémorisation. 
+Illustration avec un exemple numérique : 
+Supposons qu'on cherche à apprendre la relation entre 𝑥 𝑒𝑡 𝑦 à partir de 5 points :   
+x : 1    2    3    4    5 
+y : 2.1  3.9  6.2  7.8  10.1 
+Sur remarque que  𝑦=2 𝑥 . Un modèle simple 𝑓(𝑥)=2 𝑥 Capturez cette tendance. 
+Mais on pourrait auss i construire un polynôme de degré 4 qui passe exactement par tous les 
+points : 
+𝑓(𝑥)=2𝑥+0.03(𝑥−1)(𝑥−2)(𝑥−3)(𝑥−4)(𝑥−5) 
+Ce deuxième modèle a une erreur nulle sur les données d'entraînement. Pourtant il sera 
+probablement pire sur de nouveaux exemples car il a mémorisé le bruit plutôt qu'appris la vraie 
+tendance. 
+Mémorisation (overfitting) : 
+  Erreur train ≈ 0   mais   Erreur test élevée 
+  → Le modèle est trop adapté aux données vues 
+ 
+Généralisation correcte : 
+  Erreur train acceptable   et   Erreur test similaire 
+  → Le modèle capture la vraie tendance 
+
+===== PAGE 17 =====
+ 
+16 
+ 
+Ce phénomène s'appelle le surapprentissage (overfitting). Le combattre est l'un des fils 
+conducteurs de tout le cours. 
+5.2 Le dilemme biais-variance 
+Ce dilemme est fondamental. Intuitive : 
+Modèle trop simple (fort biais) : 
+ Fait des erreurs systématiques car il ne peut pas capturer la complexité réelle 
+ Exemple : modéliser une relation quadratique par une droite 
+ Erreur même sur les données d'entraînement → sous-apprentissage 
+Modèle trop complexe (forte variance) : 
+ Très sensible aux fluctuations des données d'entraînement 
+ Changez beaucoup si on change quelques exemples 
+ Mémoriser au lieu d'apprendre → surapprentissage 
+5.3 Le théorème "No Free Lunch" 
+Il existe un résultat théorique fondamental, dû à Wolpert (1996), qui dit : 
+"Il n'existe pas d'algorithme d'apprentissage universellement meilleur que tous les 
+autres sur tous les problèmes possibles." 
+Ce que ça signifie concrètement : 
+Si un algorithme A est meilleur que B sur certains problèmes, alors il existe d'autres problèmes 
+où B est meilleur que A. Aucun algorithme ne domine tous les autres en toutes circonstances. 
+Conséquence pratique importante : 
+Cela justifie pourquoi il est indispensable de comprendre les hypothèses implicites de chaque 
+algorithme, c'est -à-dire sur quels types de problèmes il excelle et pourquoi. Ce sera le fil 
+conducteur de chaque chapitre. 
+6 Comment un algorithme apprend-il ? 
+6.1 L'idée de la fonction de perte 
+
+===== PAGE 18 =====
+ 
+17 
+ 
+Pour qu'un algorithme puisse apprendre, il faut lui donner une façon de mesurer ses erreurs. 
+C'est le rôle de la fonction de perte. 
+Intuition : imaginez que vous apprenez à lancer des fléchettes. Tu as besoin d'un retour sur tes 
+erreurs pour t'améliorer. Si on te dit juste "bien" ou "mal", tu progresses peu. Si on te dit "tu es 
+à 3 cm à gauche et 1 cm en dessous", tu peux corriger précisément. 
+La fonction de perte joue ce rôle : elle quantifie à quel point la prédiction du modèle s'écarte 
+de la vraie réponse. 
+Exemples de fonctions de perte : 
+Pour la régression (prédire une valeur continue), la perte quadratique est la plus naturelle : 
+𝐿(𝑦,𝑦̂)=(𝑦−𝑦̂)2 
+Où 𝑦 est la vraie valeur et 𝑦̂ la valeur prédite par le modèle. 
+Sur l'ensemble d'entraînement, on minimise la perte moyenne : 
+𝐽(𝜃)=1
+𝑛∑𝐿(𝑦𝑗𝑒,𝑓𝜃(𝑋𝑗𝑒))
+𝑛
+𝑖=1
+ 
+Où 𝜃 définir les paramètres du modèle à apprendre. 
+Apprendre = trouver les paramètres 𝜽 qui minimise 𝐽(𝜃) 
+C'est un problème d’optimisation. Presque tout l'apprentissage automatique revient à résoudre 
+des problèmes d'optimisation, avec des fonctions de perte et des espaces de paramètres 
+différents selon les méthodes.  
+ 
+ 
+ 
+Chapitre 3. Les arbres de décision 
+
+===== PAGE 19 =====
+ 
+18 
+ 
+1. Motivation — Un problème concret pour commencer 
+Avant toute formule, partons d'une situation réelle. 
+Un médecin doit décider si un patient doit être hospitalisé d'urgence ou non. Il dispose de  
+quelques informations : la température du patient, sa pression artérielle, son âge, et s'il a des 
+difficultés respiratoires. 
+Comment le médecin prend -il sa décision ? Il ne calcule pas une formule mathématique 
+complexe. Il raisonne par une série de questions successives : 
+ 
+Ce raisonnement naturel est exactement ce qu'un arbre de décision  formalise 
+mathématiquement. C'est l'un des algorithmes les plus intuitifs et les plus utilisés en 
+apprentissage automatique, et c'est pourquoi nous commençons par lui. 
+2. Définition et structure d'un arbre de décision 
+2.1 Vocabulaire de base 
+Un arbre de décision est une structure arborescente où chaque nœud interne pose une question 
+sur une caractéristique, chaque branche correspond à une réponse possible, et chaque feuille 
+donne une prédiction. 
+
+
+===== PAGE 20 =====
+ 
+19 
+ 
+Définitions formelles : 
+ Nœud racine : le premier test, celui qui divise tout le dataset 
+ Nœud interne : un test intermédiaire sur une fonctionnalité 
+ Feuille (nœud terminal) : une prédiction finale — une classe pour la classification, une 
+valeur pour la régression 
+ Profondeur d'un nœud : nombre de niveaux depuis la racine (racine = profondeur 0) 
+ Profondeur de l'arbre : profondeur maximale de ses feuilles 
+2.2 Types de tests aux nœuds 
+La question posée à chaque nœud dépend du type de la fonctionnalité : 
+Caractéristique continue (ex : température, âge, salaire) : 
+𝑥𝑗≤𝜏 (𝑠𝑒𝑢𝑖𝑙 𝜏 𝑎 𝑑é𝑡𝑒𝑟𝑚𝑖𝑛𝑒𝑟) 
+Caractéristique catégorielle (ex : couleur, pays, catégorie) : 
+𝑥𝑗∈𝑆 (𝑠𝑜𝑢𝑠−𝑒𝑛𝑠𝑒𝑚𝑏𝑙𝑒 𝑆 𝑑𝑒 𝑐𝑎𝑡é𝑔𝑜𝑟𝑖𝑒𝑠) 
+Dans ce cours, nous nous concentrons sur les fonctionnalités continues  avec des seuils 
+binaires, car c'est le cas le plus général et le plus utilisé en pratique. 
+3 Comment construire un arbre ? Le problème d'optimisation 
+3.1 Pourquoi ne peut-on pas trouver l'arbre optimal ? 
+
+
+===== PAGE 21 =====
+ 
+20 
+ 
+On pourrait naïvement vouloir trouver l'arbre qui minimise exactement l'erreur sur les données 
+d'entraînement. Malheureusement, ce problème est NP-difficile — il n'existe pas d'algorithme 
+efficace pour le résoudre exactement. 
+Pourquoi ?  Le nombre d'arbres possibles est astronomique. Pour n exemples et p 
+caractéristiques, le nombre d'arbres binaires distincts croît de façon exponentielle avec la 
+profondeur. 
+Solution pratique :  on utilise une heuristique gloutonne (gourmande). À chaque nœu d, on 
+choisit le meilleur test localement — celui qui divise le mieux les données en ce point — sans 
+revenir en arrière sur les choix précédents. 
+C'est sous-optimal globalement, mais efficace et souvent très bon en pratique. 
+3.2 Qu'est-ce qu'une "bonne" division ? 
+L'idée centrale est la suivante : une bonne division d'un nœud est celle qui crée des sous-groupes 
+les plus purs possible, c'est-à-dire des groupes où la majorité des exemples appartient à la même 
+classe. 
+Exemple : 
+Supposons un nœud contenant 10 exemples : 5 de classe A et 5 de classe B. 
+Division 1 : 
+ Groupe gauche : 5A, 0B → très pur 
+ Groupe droite : 0A, 5B → très pur → Excellente division ! 
+Division 2 : 
+ Groupe gauche : 3A, 2B → mélangé 
+ Groupe droite : 2A, 3B → mélangé → Division médiocre. 
+Il nous faut une mesure mathématique de cette "pureté" ou "impureté". 
+4 Mesures d'impureté 
+4.1 L'entropie de Shannon 
+
+===== PAGE 22 =====
+ 
+21 
+ 
+L'entropie vient de la théorie de l'information (Shannon, 1948). Elle mesure le désordre ou 
+l'incertitude dans un ensemble. 
+Intuition : si tu dois deviner la classe d'un exemple tiré au hasard dans un nœ ud, de quelle 
+quantité d'information as-tu besoin ? 
+ Si le nœud contient 100% de classe A : tu n'as besoin d'aucune information (tu sais 
+d'avance). Entropie = 0. 
+ Si le nœud contient 50% A et 50% B : tu as un maximum d'incertitude. Entropie 
+maximale. 
+Définition formelle : 
+Pour un nœud contenant des exemples de 𝑘 classes, avec 𝑝𝑘 la proportion d'exemples de classe 
+𝑘: 
+𝑯=−∑𝒑𝒌
+𝑲
+𝒌=𝟏
+ 𝑙𝑜𝑔2(𝒑𝒌) 
+avec la convention 0𝑙𝑜𝑔2=0 (par continuité, car 𝑙𝑖𝑚𝑝→0 𝑝𝑙𝑜𝑔𝑝=0). 
+Calcul sur un exemple : 
+Nœud avec 6 exemples de classe A et 4 de classe B : 𝑝𝐴=0.6, 𝑝𝐵=0.4 
+𝐻=−0.6𝑙𝑜𝑔2(0.6)−0.4 𝑙𝑜𝑔2(0.4) 
+=−0.6∗(−0.737)−0.4∗(−1.322) 
+=0.442+0.529=0.971𝑏𝑖𝑡𝑠 
+Propriétés importantes de l'entropie : 
+*Propriété 1 – Bornes :* 
+0≤𝐻≤𝑙𝑜𝑔2(𝐾) 
+ 𝐻=0 si et seulement si un seul 𝑝𝑘=1 (nœud pur, une seule classe) 
+
+===== PAGE 23 =====
+ 
+22 
+ 
+ 𝐻=𝑙𝑜𝑔2(𝐾) si et seulement si 𝑝1=𝑝2=⋯=𝑝𝑘=1/𝐾 (distribution uniforme, 
+maximum d’incertitude) 
+Propriété 2 — Concavité : 
+𝐻 est une fonction concave des probabilités 𝑝1,…,𝑝𝑘 .Cela signifie que mélanger deux 
+distributions augmente toujours l'entropie : 
+𝐻(𝜆𝑝+(1−𝜆)𝑞)≥𝝀𝐻(𝑝)+(1−𝜆)𝐻(𝑞) 
+Cette propriété est importante car elle justifie que diviser un nœud ne peut qu' améliorer (ou 
+maintenir) la pureté globale. 
+4.2 L'indice de Gini 
+L'indice de Gini est une autre mesure d'impureté, plus simple à calculer car elle évite les 
+logarithmes. 
+Définition : 
+𝐺=∑𝑝𝑘(1−𝑝𝑘)
+𝐾
+𝑘=1
+=1−∑𝑝𝑘
+2
+𝐾
+𝑘=1
+ 
+Intuition :  𝑝𝑘(1−𝑝𝑘)est la proba bilité de mal classer un exemple de classe  𝑘 si on lui 
+assignait une classe au hasard selon la distribution 𝑝. Gini mesure donc le taux d'erreur moyen 
+d'une classification aléatoire. 
+Calcul sur le même exemple (𝑝𝐴=0.6),𝑝𝐵 =0.4 : 
+𝐺=1−(0.62+0.42)=1−(0.36+0.16)=1−0.52=0.48 
+Propriétés du Gini : 
+ 𝐺=0 si et seulement si le nœud est pur (un seul 𝑝𝑘=1) 
+ 𝐺≤1−1/𝐾 (maximum en distribution uniforme) 
+ Pour 𝐾=2:𝐺𝑚𝑎𝑥=0.5 
+Comparaison Entropie vs Gini : 
+ ENTROPIE H         INDICE DE GINI G 
+𝒑𝑨=𝟎.𝟓 1.0 bit 0.50 
+𝒑𝑨=𝟎.𝟕 0.881 bit 0.42 
+𝒑𝑨=𝟎.𝟗 0.469 bit 0.18 
+
+===== PAGE 24 =====
+ 
+23 
+ 
+𝒑𝑨=𝟏.𝟎 0.0 bit 0.00 
+Les deux mesures donnent des résultats très similaires en pratique. L'entropie pénalise 
+légèrement plus les impuretés extrêmes. Le Gini est préféré quand le calcul doit être rapide. 
+4.3 L'erreur de classification 
+Une troisième mesure, plus directe : 
+𝐸=1−max
+𝑘
+𝑝𝑘 
+C'est simplement le taux d'erreur si on prédit toujours la classe majoritaire. 
+Problème : cette mesure est moins sensible aux changements de distribution que l'entropie et 
+le Gini. Elle est donc moins utile pour guider les divisions et est rarement utilisée comme critère 
+de split. 
+5 Le Gain d'Information 
+5.1 Définition 
+Le gain d'information mesure la réduction d'entropie obtenue en divi sant un nœud selon un 
+test donné. 
+Soit un nœud 𝑡 qu'on divise en deux fils 𝑡𝐿 (gauche) et 𝑡𝑅 (droite) : 
+ 𝑛 : nombre total d'exemples dans 𝑡 
+ 𝑛𝐿 : nombre d'exemples dans 𝑡𝐿 
+ 𝑛𝑅 : nombre d'exemples dans 𝑡𝑅(𝑛=𝑛𝐿+𝑛𝑅) 
+Définition : 
+𝐺𝑎𝑖𝑛(𝑡,𝑡𝑒𝑠𝑡)=𝐻(𝑡)−[𝑛𝐿
+𝑛𝐻(𝑡𝐿)+𝑛𝑅
+𝑛 𝐻(𝑡𝑅)] 
+Le terme entre crochets est l' entropie conditionnelle : l'entropie résiduelle après la division, 
+pondérée par la taille de chaque sous-groupe. 
+Algorithme de construction : 
+
+===== PAGE 25 =====
+ 
+24 
+ 
+À chaque nœud 𝑡, on cherche : 
+𝑡𝑒𝑠𝑡∗=argmax
+𝑡𝑒𝑠𝑡
+𝐺𝑎𝑖𝑛(𝑡,𝑡𝑒𝑠𝑡) 
+C'est-à-dire : on teste tous les splits possibles sur toutes les features et tous les seuils, et on 
+choisit celui qui maximise le gain d'information. 
+5.2 Calcul pas à pas — Exemple complet 
+Prenons un dataset simple avec 10 étudiants. On veut prédire s'ils réussissent (𝑅) ou échouent 
+(𝐸) à leur examen. 
+# HEURES DE TRAVAIL PRESENCES (%) RESULTAT 
+1 10 90 R 
+2 4 50 E 
+3 8 80 R 
+4 2 30 E 
+5 12 95 R 
+6 6 60 R 
+7 3 40 E 
+8 9 85 R 
+9 1 20 E 
+10 7 70 R 
+Étape 1 — Entropie du nœud racine : 
+On a 6 succès (R) et 4 échecs (E) : 𝑝𝑅=0.6,𝑝𝐸=0.4 
+𝐻(𝑟𝑎𝑐𝑖𝑛𝑒)=−0.6𝑙𝑜𝑔2(0.6)−0.4𝑙𝑜𝑔2(0.4)=0.971 𝑏𝑖𝑡𝑠 
+Étape 2 — Tester le split "Heures ≤ 5" : 
+*Groupe gauche* (Heures ≤ 5) : étudiants 2, 4, 7, 9 → 0R, 4E  
+𝐻(𝑡𝐿)=−0 𝑙𝑜𝑔2(0)−1 𝑙𝑜𝑔2(1)=0 𝑏𝑖𝑡 (𝑝𝑢𝑟!) 
+*Groupe droite* (Heures > 5) : étudiants 1, 3, 5, 6, 8, 10 → 6R, 0E  
+
+===== PAGE 26 =====
+ 
+25 
+ 
+𝐻(𝑡𝑅)=0 𝑏𝑖𝑡 (𝑝𝑢𝑟!) 
+𝐺𝑎𝑖𝑛=0.971−[4
+10∗0+ 6
+10∗0]=0.971 𝑏𝑖𝑡𝑠 
+Gain maximal possible — ce split sépare parfaitement les deux classes ! 
+Étape 3 — Tester le split "Présences ≤ 55%" : 
+*Groupe gauche* (Présences ≤ 55%) : étudiants 2, 4, 7, 9 → 0R, 4E  
+𝐻(𝑡𝐿)=0 
+*Groupe droite* (Présences > 55%) : étudiants 1, 3, 5, 6, 8, 10 → 6R, 0E  
+𝐻(𝑡𝑅)=0 
+𝐺𝑎𝑖𝑛=0.971 𝑏𝑖𝑡𝑠 
+Dans cet exemple, les deux features sont parfaitement corrélées avec le résultat. Dans des cas 
+réels, les features donnent des gains différents et on choisit la meilleure. 
+5.3 Biais du gain d'information vers les features à haute cardinalité 
+Le gain d'information a un défaut important : il favorise les features avec beaucoup de valeurs 
+distinctes. 
+Exemple extrême : Si on ajoute une feature "numéro d'étudiant" (1, 2, ..., 10), le split sur cette 
+feature donnera 10 sous-groupes purs de taille 1 chacun — gain d'information maximal. Mais 
+cette feature est complètement inutile pour la généralisation ! 
+Solution — Le Gain Ratio (Quinlan, C4.5) : 
+𝐺𝑎𝑖𝑛𝑅𝑎𝑡𝑖𝑜(𝑡,𝑡𝑒𝑠𝑡)= 𝐺𝑎𝑖𝑛(𝑡,𝑡𝑒𝑠𝑡)
+𝑆𝑝𝑙𝑖𝑡𝐼𝑛𝑓𝑜(𝑡,𝑡𝑒𝑠𝑡) 
+où l'information de split pénalise les divisions en beaucoup de sous-groupes : 
+𝑆𝑝𝑙𝑖𝑡𝐼𝑛𝑓𝑜(𝑡,𝑡𝑒𝑠𝑡)=−∑𝑛𝑗
+𝑛
+𝑗
+𝑙𝑜𝑔2(𝑛𝑗
+𝑛) 
+
+===== PAGE 27 =====
+ 
+26 
+ 
+Une feature qui crée plein de petits groupes aura un SplitInfo élevé, ce qui réduit son GainRatio. 
+6 Le problème du surapprentissage et l'élagage 
+6.1 Un arbre peut mémoriser parfaitement 
+Un arbre de décision sans contrainte peut toujours atteindre 0% d'erreur sur les d onnées 
+d'entraînement : il suffit de le laisser grandir jusqu'à ce que chaque feuille contienne un seul 
+exemple. 
+Est-ce bon ? Non. Voici pourquoi. 
+Supposons que dans nos données d'entraînement, un étudiant a travaillé 8 heures, est présent à 
+80% des cours, et a échoué par malchance (il était malade le jour de l'examen). Un arbre trop 
+profond va créer une règle : 
+SI heures = 8 ET présence = 80% → ÉCHEC 
+Cette règle est un artefact du hasard, pas une vraie tendance. Elle ne généralisera pas. 
+6.2 Méthodes de contrôle de la profondeur 
+Critères d'arrêt précoce (pré-élagage) : 
+On arrête de diviser un nœud si l'une des conditions suivantes est satisfaite : 
+ La profondeur maximale est atteinte (𝑑𝑒𝑝𝑡ℎ≥𝑑𝑚𝑎𝑥 
+ Le nœud contient moins de 𝑛𝑚𝑖𝑛 exemples 
+ Le gain d'information du meilleur split est inférieur à un seuil 𝜖 
+ Le nœud est déjà pur (𝐻=0) 
+Élagage a posteriori (post-pruning) : 
+On construit d'abord l'arbre complet, puis on élague les branches qui n'améliorent pas les 
+performances sur un ensemble de validation. 
+L'idée : remplacer un sous -arbre par une feuille si cette simplification n'augmente pas 
+(significativement) l'erreur sur la validation. 
+
+===== PAGE 28 =====
+ 
+27 
+ 
+Élagage par complexité minimale des coûts (Minimal Cost-Complexity Pruning) : 
+On définit le coût d'un sous-arbre  T: 
+𝑅𝛼(𝑇)=𝑅(𝑇)+𝛼.|𝑇| 
+où : 
+ 𝑅(𝑇) est l'erreur de 𝑇 sur l'entraînement 
+ |𝑇| est le nombre de feuilles de 𝑇 
+ 𝛼≥0 est un paramètre de régularisation 
+Pour 𝛼=0 : aucune pénalité → arbre complet. Pour 𝛼 grand : pénalité forte sur la complexité 
+→ arbre simple 
+On choisit 𝛼≥0 par validation croisée. 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 29 =====
+ 
+28 
+ 
+Chapitre 4 : Systèmes Experts et Applications  
+1. Introduction   
+ La notion de systèmes experts (SE) est une notion assez ancienne qui est apparu dans les années 
+70 avec l’apparition du système expert célèbre MYCIN. La version de base contenait 200 règles 
+ensuite 300 règles concernant les méningites ont été ajoutées. Un autre système expert pionnier 
+dans le domaine est le système DENDRAL créé par le groupe de recherche HPP (Stanford 
+Heuristic Programming Project). Le système DENDRAL était le premier système basé sur des 
+heuristiques pour effectuer des analyses expérimentales dans les sciences empiriques. 
+Les systèmes experts se basent sur le paradigme revendiquant la séparation entre les 
+connaissances et le raisonnement. Aujourd’hui, les systèmes experts constituent une 
+technologie bien définie faisant partie des systèmes à base de connaissances . Les systèmes 
+experts ont comme finalité la modélisation puis la simulation, dans un logiciel, le savoir ou le 
+savoir-faire d’un expert (ou d’un ensemble d’experts) dans un domaine donné. 
+2. Les domaines d’application des systèmes experts  
+ Les systèmes experts ont résolu certains types de problèmes comme en médecine, en droit, en 
+chimie, etc. Parmi les problèmes abordés par les systèmes experts, nous citons :  
+• Le diagnostic d’une défaillance à partir d’un ensemble d’observations ;  
+• La conception d’une configuration de composants à partir d’un ensemble de 
+contraintes ;  
+• La planification d’une séquence d’actions p our l’accomplissement d’un 
+ensemble de buts à partir de certaines conditions de départ et en présence de certaines 
+contraintes ;  
+• La réparation d’un dysfonctionnement ;  
+• Le contrôle du comportement d’un environnement complexe.  
+3. Définition  
+ Edward Feige nbaum a défini les systèmes experts comme étant : « Un programme 
+informatique intelligent utilisant des connaissances et des procédures d'inférences pour 
+résoudre des problèmes assez difficiles ayant besoin d'une expertise humaine importante pour 
+leur solution ».  
+
+===== PAGE 30 =====
+ 
+29 
+ 
+Donc, un système expert est un outil capable de mettre en œuvre des connaissances pour imiter 
+le comportement et/ou le raisonnement des experts humains dans des domaines d’expertise qui 
+sont souvent basés sur un gros volume de connaissances. Plus c’est est un logiciel capable de 
+répondre à des questions en effectuant un raisonnement à partir de faits et règles connus. Il peut 
+servir notamment comme outil d’aide à la décision.  
+4. Composants d’un système expert  
+Un système expert est composé de deux  parties complémentaires : la base de connaissance et 
+le moteur d’inférence (voir la figure 2.1).  
+ 4.1 La base de connaissance  
+C’est la structure d’accueil de connaissance acquise dans un domaine d’application. Cette base 
+de connaissance est constituée elle-même de deux parties :  
+Une Base de faits (l’expérience) : contient les connaissances assertionnelles, c’est à dire les 
+informations spécifiques et connues sur un problème (un cas) particulier traité. La valeur de 
+vérité d’un fait est toujours vraie. La base de faits (BF) est la mémoire du travail d’un système 
+expert, elle est modifiée au fur et à mesure de la progression du raisonnement.  
+ Exemple 4.4.1. Exemple de quelques faits :  
+- Animal vole ;  
+- Poids animal est inférieur à 10 gr ;  
+- Animal pond des œufs.  
+Une Base de règles (le savoir -faire) : la base de règle ( BR) modélise la connaissance 
+"générale" et le savoir de l’expert du domaine considéré et ce, sous forme de règles codées avec 
+le langage utilisé par le système. Les règles représentent les conn aissances opératoires qui 
+permettent la déduction pour un système expert. Ce sont des règles déductives appelées règles 
+de production.  
+  
+Une règle se met sous la forme suivante :  
+  
+
+===== PAGE 31 =====
+ 
+30 
+ 
+SI Condition_1 et Condition_2 et Condition_3 ... et Condition_n ALORS Action_1 et 
+Action_2 et Action_3 ... et Action_p.  
+  
+Exemple 4.4.2. Une règle de production :  
+ SI l’animal pond des œufs et l’animal vole ALORS l’animal est un oiseau  
+ 4.2 Le moteur d’inférence  
+ Le système expert doit disposer, en outre, d’un système de contrôle et de raisonnement sur ces 
+connaissances capable de répondre aux « questions » qui seront posées par les futurs utilisateurs 
+du système. Ce système est connu dans le jargon des SE sous le nom de moteur d’inférence et 
+il doit être assez général et i ndépendant du domaine concerné. Le moteur d’inférence permet 
+d’inférer des connaissances nouvelles à partir de la base de connaissance du système.  
+Enfin, pour qu’un système expert soit un outil efficace, il doit être capable d’interagir avec ces 
+utilisateurs dans le sens où il doit pouvoir :  
+ Fournir une interface pour acquérir ou modifier les connaissances et aussi pour 
+recevoir les questions ;  
+ Expliquer son raisonnement et les réponses qu’il donne pour les questions.   
+Selon la représentation de connais sances, il y a deux générations principales de systèmes 
+experts :  
+• Les systèmes experts de première génération : utilisent des règles Si-Alors pour 
+représenter les connaissances ;  
+• Les systèmes experts de deuxième génération : sont plus flexibles et utilis ent 
+différentes formalismes pour représenter les connaissances.  
+La figure suivante, représente les composants de base d’un système expert.  
+
+===== PAGE 32 =====
+ 
+31 
+ 
+ 
+Figure 4.1 : Composants d’un système experts 
+ 5 Fonctionnement et caractéristiques d’un moteur d’inférence  
+L'indépendance entre la base de connaissances et le moteur d'inférence est une caractéristique 
+essentielle des SE et c’est elle qui permet de faire évoluer la base de connaissances du système 
+sans avoir à agir sur le moteur d’inférence qui peut être valide pour  différents types de 
+problèmes.  
+Le moteur d'inférence (appelé parfois moteur de résolution) est le cœur d’un SE. Il peut être 
+indépendant du domaine d'application et il doit être capable d’exploiter la base des 
+connaissances afin de résoudre les problèmes posés par les utilisateurs.  
+5.1 Cycles d’un moteur d’inférence  
+Un moteur d’inférence enchaîne une séquence de cycles pendant son raisonnement jusqu’à 
+aboutit au but cherché ou jusqu’à saturation. Un cycle d’un moteur d’inférence est constitué de 
+deux phases :  
+
+
+===== PAGE 33 =====
+ 
+32 
+ 
+• Une phase d’évaluation ;  
+• Une phase d’exécution ;  
+ Un système expert doit être capable de choisir les règles applicables vis -àvis l’état courant de 
+la base des faits et les faits à établir.   
+5.1.1 La phase d’évaluation  
+Le processus de détection des règles applicables, à la phase suivante, fait partie du cycle de 
+travail d’un moteur d’inférence et particulièrement de sa phase d’évaluation . Cette phase 
+d’évaluation s’effectue généralement en trois étapes :  
+ La sélection ou restriction : cette étape  optionnelle concerne une première 
+sélection d’un sous -ensemble de règles dans la base des règles qui –à priori- mérite 
+d’être considéré dans l’étape suivante.  
+Ce choix dépend de l’état courant de la base de faits.  
+ Le filtrage (pattern matching) : Parmi l’ensemble retenu à l’étape précédente, 
+cette étape retient un sous -ensemble, dit ensemble de conflit, qui contient seulement 
+les règles qui peuvent effectivement être applicables. Généralement, ce sous ensemble 
+est constitué des règles dont les prémisses appartiennent à la base des faits.  
+ La résolution de conflits : Parmi les règles retenues suite au filtrage, le moteur 
+décide de la (des) règle(s) qui sera (seront) exécutée(s).  
+5.1.2 La phase d’exécution  
+Comme son nom l’indique, la phase d’exécution concerne l’exécution de la partie ‘action’ des 
+règles sélectionnées lors de la phase d’évaluation. Les nouveaux faits résultants seront ajoutés 
+à la base des faits.  
+Remarque : L’arrêt de ce cycle peut survenir dans :  
+ la phase d’évaluation (par exemple, dans le cas d’absence de règles applicables 
+à la situation en cours)  
+ la phase d’exécution (par exemple, dans le cas de l’exécution d’une règle dont 
+la partie ‘action’ commande l’arrêt du cycle).  
+
+===== PAGE 34 =====
+ 
+33 
+ 
+La figure suivante illustre, comment, en général, un moteur d'inférence enchaîne des cycles de 
+travail composés de deux phases.  
+ 
+  
+Figure 4.2 : Moteur d’inférence : les cycles de travail 
+5.2 Les caractéristiques d’un moteur d’inférence  
+L’objectif recherché par un moteur d’inférence lorsqu’il enchaîne des cycles de travail est de 
+trouver une solution au problème (question) posé. En effet, la manière dont cette recherche est 
+effectuée dépend des caractéristiques du moteur d’inférence utilisé.   
+Les caractéristiques de base d’un moteur de recherche sont : son formalisme de représentation 
+de connaissance utilisé (généralement basé sur les logiques classiques ou ses extensions), son 
+Phase 
+  
+d’évaluation 
+  
+ Phase 
+  
+d’exécution 
+  
+2 
+ème 
+  
+conditions 
+  
+Non 
+  
+ Non 
+  
+ 1 
+ère 
+  
+conditions 
+  
+Ou 
+i 
+  
+ Ou 
+i 
+  
+Ar 
+rêt 
+  
+du 
+  
+processus 
+  
+Résolution de conflit 
+  
+Pour déterminer 
+  
+l’ensemble de conflit (R 
+3 
+, 
+   
+R 
+2 
+) 
+  
+des 
+  
+règles 
+  
+à 
+  
+utiliser 
+  
+Mise 
+  
+à 
+  
+jour 
+  
+De 
+  
+la 
+  
+base 
+  
+de 
+  
+connaissances 
+  
+( 
+la 
+  
+base 
+  
+des 
+  
+faits) 
+  
+Filtrage 
+  
+Pour 
+  
+déterminer 
+  
+l’ensemble 
+  
+de 
+  
+conflit( 
+  
+R 
+2 
+, 
+   
+R 
+1 
+) 
+  
+Exécution 
+  
+Des 
+  
+actions 
+  
+des 
+  
+règles 
+  
+de 
+  
+l’ensemble 
+  
+R 
+3 
+  
+Sélection 
+  
+D’un sous ensemble R 
+   
+1 
+de la 
+  
+base 
+  
+des 
+  
+règles 
+  
+
+===== PAGE 35 =====
+ 
+34 
+ 
+mode de chaînage, la stratégie de recherche ou de résolution de conflit qu’il utilise, son 
+régime de contrôle , et son type de raisonnement . A insi, on choisissant à chaque fois, un 
+formalisme de représentation de connaissance, un mode de chaînage, une stratégie de recherche, 
+un régime de contrôle et en fixant un type de raisonnement, on obtient un moteur d’inférence 
+complet et bien défini.   
+5.2.1 Le mode de chaînage  
+Les moteurs d’inférence sont caractérisés par leurs modes d’invocation des règles. Selon le 
+mode de chaînage, En effet, on distingue trois types de moteurs d’inférence :   
+1) Les moteurs d’inférence à chaînage avant ;  
+2) Les moteurs d’inférence à chaînage arrière ;  
+3) Les moteurs d’inférence à chainage mixte.  
+Nous revenons sur ces trois modes de chaînage en paragraphe 4.6  
+5.2.2 Les stratégies de recherche  
+La résolution de conflit est souvent indépendante du contexte d’application et de la sémantique 
+des règles, mais, elle est généralement guidée par des soucis d’efficacité (par exemple, choix 
+des règles les moins complexes). Toutefois, des informations heuristiques peuvent être 
+exploitées pour fixer un ordre de priorité entre ces règles. Les stratégies les plus fréquentes sont 
+les suivantes :  
+⚫ Stratégie en profondeur d'abord ;  
+⚫ Stratégie en largeur d'abord ;  
+⚫ Stratégie ‘LEX’ : règles triées par fraîcheur (recency) des faits de leurs conditions ;  
+⚫ Stratégie basée sur la complexité : les règles dont le nombre de ces faits/conditions est le  
+plus grand sont les plus prioritaires ;  
+⚫ Stratégie basée sur la simplicité : les règles dont le nombre de leurs faits/conditions est le 
+plus petit sont les plus prioritaires ;  
+
+===== PAGE 36 =====
+ 
+35 
+ 
+⚫ Stratégie basée sur les méta -règles : la connaissance est traduite en règl es, la méta -
+connaissance s’exprime par des métarègles (c’est-à -dire des règles sur la manière d’utiliser les 
+règles).  
+Exemple 4.5.2.2. On trouve par exemple dans MYCIN la métarègle suivante :  
+Si on recherche une thérapie Alors considérer dans cet ordre les règles qui permettent de :  
+– acquérir les informations cliniques sur le patient ;  
+– trouver quels organismes, s’il en existe, sont causes de l’infection ;  
+– identifier les organismes les plus vraisemblables ;  
+– trouver tous les médicaments potentiellement utiles ;  
+– choisir les plus adaptés en plus petit nombre.  
+5.2.3 Le régime de contrôle   
+Un moteur d’inférence peut être caractérisé par sa conduite dans le cas où sa phase d’exécution 
+déboucherait sur un échec (par exemple, si R3 est vide). A ce niveau, il existe deux types de 
+conduite :  
+⚫ Les choix pris ne sont jamais remis en cause, ceci est traduit définitivement  comme un échec. 
+On dit alors que ce type de moteur suit un régime irrévocable ;  
+⚫ Lorsqu’on peut remettre en cause l'application d'une règle si ce choix débouche sur un échec, 
+le régime appliqué est dit par tentatives et il se base sur le principe de retour arrière 
+(backtracking) pour essayer une règle écartée.  
+Les moteurs d’inférence qui adoptent un régime par tentatives suivent généralement des 
+stratégies en profondeur d'abord puisque avec une stratégie en largeur le retour arrière est, en 
+principe, inutile.  
+5.2.4 Le type de raisonnement  
+Un moteur d’inférence peut être basé sur une théorie logique monotone ou non monotone. Un 
+fonctionnement monotone signifie que aucune connaissance ne peut être retirée de la base des 
+
+===== PAGE 37 =====
+ 
+36 
+ 
+faits ni de la base des règles , et que l’ajout d’un fait à la base des faits n’introduit pas de 
+contradiction logique avec les autres faits de la base. Par contre, un moteur d’inférence non 
+monotone, un fait aj outé à la base des faits précédemment peut être retiré dans le cas où des 
+contradictions sont constatées ou en cas de backtracking par exemple. Les faits inférés à partir 
+d’une règle qui n’a pas abouti, sont supprimés à cause de la remise en cause de la rè gle en 
+question et le choix d’une autre règle en faisant un retour arrière.  
+5.2.5 Ordre d’un système expert à règle de production  
+L’ordre d’u moteur d’inférence revient à la complexité des règles de production figurant dans 
+les règles. On peut distinguer les ordres suivant dans les systèmes experts :  
+• Ordre 0 : c’est un système experts qui utilise que des faits booléens ;  
+• Ordre 0+ :c’est un système expert qui utilise des faits booléens et  des relations 
+(souvent sous la forme relation attribut valeur) ;  
+• Ordre 1 : c’est un système expert dont les règles peuvent contenir des variables 
+(les notions de la logique du premier ordre).  
+ 6 Type de moteurs d’inférence  
+ 6.1 Moteur d’inférence à chaînage avant  
+ Dans le mode de chainage avant (farward chaining) : (connu aussi comme le mode guidé par 
+les données), le moteur d'inférence procède comme suit :  
+ Il ne sélectionne que les règles dont les conditions (prémisses) 
+appartiennent à la base des faits pour arriver au but recherché ;  
+ Il applique ensuite une de ces règles afin d’ajouter d’autres faits à la base;  
+ Cet enchaînement est réitéré jusqu'à ce que le but soit atteint ou plus 
+aucun fait nouveau ne puisse être déduit (on parle alors de saturation).  
+Le chaînage avant procède généralement par régime irrévocable et monotone et il a l’avantage 
+d’être simple à implémenter tout en permettant de répondre plus rapidement à tout nouveau fait 
+ajouté. Il est, toutefois, sujet au risque de l’explosion combinatoire car il sélectionne toutes les 
+règles même celles sans intérêt pour la résolution du but.  Sous forme pseudo code, l’algorithme 
+se présente de la manière suivante :  
+
+===== PAGE 38 =====
+ 
+37 
+ 
+ 
+Exemple 4.6.1.1 Un moteur d’inférence à chainage avant  en profondeur d’abord monotone 
+avec régime irrévocable :  
+Soit la BF = {B, C} et soit H le  fait à établir en utilisant le chainage avant. Soit BR composée 
+des règles suivantes :  
+  
+Solution  
+1. Conflit = {R4, R7}, règle choisie R4 : BF = {B, C, X} ; désactiver R4 ;  
+2. Conflit = {R4, R7, R8, R9}, règle choisie : R7, BF = {B, C, X, D} ;  
+3. Conflit = {R4, R7, R5, R8, R9,}, règle choisie : R5, BF = {B, C, X, D, E} ;  
+4. Conflit = {R4, R7, R5, R1, R8, R9}, règle choisie : R1, BF = {B, C, X, E, F} ;  
+5. Conflit = {R4, R7, R5, R1, R3, R8, R9}, règle choisie : R3, BF = {B, C, X, E, 
+F, A} ;  
+  
+
+
+===== PAGE 39 =====
+ 
+38 
+ 
+6. Conflit = {R4, R7, R5, R1, R3, R6, R8, R9}, règle choisie : R6, BF = {B, C, X, 
+E, F, A, H} ;  
+Le but H est établi, donc on s’arrête.  
+Exemple 4.6.1.2 Un moteur d’inférence à chainage avant en largeur d’abord monotone avec 
+régime irrévocable :  
+On utilise la même base de connaissance de l’exemple précédant, avec le même fait H à établir. 
+Solution  
+1. Conflit = {R4, R7}, on applique R4 puis R7, BF = {B, C, X, D} ;  
+2. Conflit = {R5, R8, R9}, on applique R5 puis R8 puis R9, BF = {B, C, X, D, E, 
+A} ;  
+3. Conflit = {R1, R6}, on applique R1 puis R6, BF = {B, C, X, D, E, A, F, H} ; Le 
+fait H est établi, donc on s’arrête.  
+6.2 Moteur d’inférence à chaînage arrière  
+Un moteur d'inférence qui suit un chaînage arrière (backward chaining), part du but et essaie 
+de ‘remonter’ aux faits pour le prouver (parcours guidé par le but).  
+ En effet, le moteur sélectionne les règles dont la partie ‘action’ (ou conclusion) 
+correspond au but recherché. Les prémisses/conditions (partie ‘situation’) de ces règles 
+deviennent elles aussi des sous buts à prouver et ainsi de suite ;  
+ Cet enchaînement s’arrête lorsque tous les sous buts sont prouvés- le but est alors 
+lui aussi prouvé - ou lorsqu’il n’est plus possible de sélectionner des règles.   
+Le chaînage arrière nécessite un régime de contrôle par tentatives. Le moteur d'inférence opère 
+alors un retour arrière (backtracking) pour remettre en cause l'application d'une règle qui 
+débouche sur un échec et pour essayer une règle écartée précédemment.  Sous forme 
+pseudocode, l’algorithme est présenté de la manière suivante :  
+
+===== PAGE 40 =====
+ 
+39 
+ 
+ 
+Exemple 4.6.2. Nous cherchons à déduire le but H de la base de connaissance de l’exemple 
+précédent en utilisant le chainage arrière.  
+
+
+===== PAGE 41 =====
+ 
+40 
+ 
+ 
+  
+6.3 Moteur d’inférence à chaînage mixte  
+Le chainage mixte est une combinaison du chaînage avant et du chaînage arr ière. Un moteur 
+qui suit ce mode opère généralement comme suit :  
+ Tant que des règles sont applicables (conditions satisfaites), il procède par 
+chaînage avant jusqu’à satisfaction du but ou jusqu’à saturation de la base de faits ;  
+ Si le but n’est toujours  pas prouvé, il choisit alors une règle dont la partie 
+conclusion correspond au but et essaie de prouver ses prémisses inconnues par 
+
+
+===== PAGE 42 =====
+ 
+41 
+ 
+chaînage arrière en veillant à modifier la base de faits à chaque nouveau sous but 
+prouvé;  
+ Si le but n’est toujours pas prouvé, il repart en chaînage avant en tenant compte 
+des nouveaux faits prouvés et éventuellement en demandant de nouveaux faits à 
+l’utilisateur et ainsi de suite jusqu’à ce que le but soit prouvé ou jusqu’à ce qu’aucune 
+règle ne soit applicable.  Sous forme pseudocode, il se présente de la manière suivante : 
+ 
+7 Problèmes liés aux systèmes experts  
+- Les connaissances ne sont pas toujours disponibles ;  
+- Difficulté d’extraire l’expertise d’un être humain d’une manière certaine et 
+précise ;  
+- Domaines d’utilisation restreints ;  
+- Difficultés d’obtenir des vérifications indépendantes aux solutions proposées ;  
+- Le vocabulaire et les termes techniques peuvent être difficile à transporter à un 
+système expert ;  
+- Manque de confiance aux systèmes experts ;  
+- Parfois, les systèmes experts n’arrivent pas à des conclusions.   
+ 
+ 
+ 
+ 
+
+
+===== PAGE 43 =====
+ 
+42 
+ 
+ 
+Chapitre 5 : La régression linéaire 
+La régression linéaire est l'un des algorithmes les plus simples et fondamentaux du machine 
+Learning. Elle est utilisée pour prédire une variable continue à partir  d'une ou plusieurs 
+variables explicatives. Commençons par expliquer ce qu'est la régression linéaire de manière 
+détaillée, en abordant les aspects mathématiques, l'intuition, et comment la mettre en œuvre en 
+Python. 
+1. Qu'est-ce que la régression linéaire ? 
+La régression linéaire est une méthode statistique qui cherche à modéliser la relation entre une 
+variable dépendante (ou cible)  𝑦 et une ou plusieurs variables indépendantes (ou 
+caractéristiques)  𝑥. L'objectif est de trouver la meilleure droite (ou hyperplan) qui relie ces 
+variables.  
+La régression linéaire peut être vue comme une tentative d’ajuster une ligne droite (dans le cas 
+d'une seule variable indépendante) ou un hyperplan (dans le cas de plusieurs variables 
+indépendantes) pour minimiser l’erreur entre la prédiction du modèle et les valeurs réelles. 
+2. Formule de base de la régression linéaire : 
+Cas de régression linéaire simple (une seule variable indépendante) : 
+L’équation de la régression linéaire est donnée par : 
+𝑦=𝛽0+ 𝛽1𝑥+𝜖 
+Cette équation est utilisée pour prédire une variable dépendante 𝑦 en fonction d’une variable 
+indépendante 𝑥, et est la base de la régression linéaire en machine Learning. 
+Chaque élément de cette formule a une signification spécifique. Voyons cela en détail : 
+1. 𝒚 : La variable dépendante (la cible) 
+ Signification : 𝑦 est la variable que nous voulons prédire. C’est ce que l'on appelle la 
+variable cible. 
+
+===== PAGE 44 =====
+ 
+43 
+ 
+ Exemple de la vie réelle : Si nous voulons prédire le prix d'une maison, 𝑦 serait le prix 
+de la maison. Si nous voulons prédire la température d'une ville, 𝑦 serait la température. 
+2. 𝒙 : La variable indépendante (les caractéristiques ou les prédicteurs) 
+ Signification : 𝑥 est la variable indépendante, c’est-à-dire la variable don t on pense 
+qu’elle influence ou prédit 𝑦. 
+ Exemple de la vie réelle : Si nous essayons de prédire le prix d'une maison, 𝑥 pourrait 
+être la superficie de la maison, car on suppose que plus la maison est grande, plus son 
+prix est élevé. 
+3. 𝜷𝟎 : L’intercept ou la constante 
+ Signification : 𝛽0 est l’intercept de la droite de régression. Cela représente la valeur de 
+𝑦 lorsque 𝑥=0. Autrement dit, c'est la valeur de la variable dépendante quand la 
+variable indépendante est égale à zéro. 
+ Exemple de la vie réelle : Si on suppose que le prix d'une maison commence à un 
+certain montant, même s'il n'y a pas de superficie (par exemple, une maison de 0 m²), 
+cela correspondrait à 𝛽0. Dans ce cas, ce serait un prix de base pour une maison sans 
+superficie. 
+4. 𝜷𝟏: Le coefficient de pente (ou le coefficient directeur) 
+ Signification : 𝛽1 est le coefficient de pente, qui décrit l'impact de la variable 𝑥 sur la 
+variable 𝑦. Autrement dit, il montre de combien  𝑦 change lorsque  𝑥 augmente de 1 
+unité. 
+ Exemple de la vie réelle  : Dans le cas de la prédiction du prix d'une maison, si 𝛽1=
+2000, cela signifierait que chaque mètre carré supplémentaire dans la superficie de la 
+maison augmente le prix de la maison de 2000 unités monétaires (par exemple, 2000  
+euros ou dollars). 
+5. 𝝐 : L'erreur (ou terme de bruit) 
+ Signification : 𝜖 est le terme d'erreur ou le bruit. Cela représente la différence entre 
+la valeur réelle de 𝑦 et la valeur prédite par le modèle. Il capture les facteurs aléatoires 
+ou non observés qui affectent 𝑦 mais qui ne sont pas pris en compte par  𝑥. 
+
+===== PAGE 45 =====
+ 
+44 
+ 
+ Exemple de la vie réelle  : Dans notre exemple de prix de maison, même si nous 
+connaissons la superficie de la maison, d'autres facteurs non mesurés (comme 
+l'emplacement, la décoration, l'état général, etc.) peuvent affecter le prix de la maison. 
+Ces effets sont représentés par 𝜖. L'erreur est inévitable et fait partie de la nature des 
+modèles de régression, car il y a toujours des éléments que nous ne pouvons pas 
+modéliser parfaitement. 
+Intuition derrière la formule : 
+L’objectif de la régression linéaire est de trouver les valeurs de 𝛽0 (l’intercept) et  𝜷𝟏 (la pente) 
+qui minimisent l’erreur entre les valeurs réelles de 𝑦 et les valeurs prédites par le modèle. Cette 
+erreur est souven t mesurée par la somme des carrés des erreurs  (MSE, ou Mean Squared 
+Error), qui mesure la différence entre les prédictions du modèle et les valeurs réelles. 
+L'équation générale 𝑦=𝛽0+𝛽1𝑥+𝜖 représente une droite de régression, qui est la meilleure 
+approximation linéaire de la relation entre 𝑦 et 𝑥. 
+Exemple visuel : 
+Imaginons que nous avons les données suivantes sur la superficie d'une maison 𝑥 (en mètres 
+carrés) et le prix 𝑦 (en milliers de dollars) : 
+Superficie (m²) 𝒙 Prix (en milliers de $) 𝒚 
+50 200 
+60 240 
+70 280 
+80 320 
+90 360 
+Si nous appliquons la régression linéaire à ces données, nous trouverons une ligne qui minimise 
+l’erreur entre la prédiction du prix et les valeurs réelles. Cette ligne pourrait ressembler à : 
+𝑦=100+2𝑥 
+Cela signifie que l’intercept 𝛽0=100 et la pente 𝛽2=2 . L'interprétation est la suivante : 
+
+===== PAGE 46 =====
+ 
+45 
+ 
+ L'intercept 𝜷𝟎=𝟏𝟎𝟎 signifie que, lorsque la superficie de la maison est de 0 m², le 
+prix de la maison serait de 100 000 dollars. 
+ La pente  𝜷𝟏=𝟐 signifie que, pour chaque mètre carré supplémentaire dans la 
+superficie, le prix de la maison augmente de 2000 dollars. 
+Termes de l'erreur 𝝐: 
+Bien entendu, cette formule ne sera jamais parfaite car il y a des facteurs inconnus qui 
+influencent le prix d’une maiso n, par exemple, l’emplacement, l’année de construction, ou 
+encore des rénovations. Le terme ϵ\epsilonϵ permet de tenir compte de ces écarts. 
+Conclusion : 
+La formule 𝑦=𝛽0+𝛽1𝑥+𝜖 est au cœur de la régression linéaire et permet de comprendre la 
+relation entre une variable dépendante 𝑦 et une ou plusieurs variables indépendantes  𝑥. 
+L'objectif de la régression est de trouver les coefficients  𝛽0 et 𝛽1 qui minimisent l'erreur de 
+prédiction. Cette équation est utilisée dans de nombreux domaines, de la prédiction des prix des 
+biens immobiliers à la modélisation des tendances économiques, et constitue l'une des bases du 
+machine Learning.  
+Cas de régression linéaire multiple (plusieurs variables indépendantes) : 
+Si on a plusieurs variables indépendantes, l’équation devient : 
+𝑦=𝛽0+𝛽1𝑥1+𝛽2𝑥2+⋯+𝛽𝑝𝑥𝑝+𝜖 
+Où : 
+ 𝒙𝟏,𝒙𝟐,…,𝒙𝒑: Les différentes variables indépendantes. 
+ 𝜷𝟏,𝜷𝟐,…,𝜷𝒑 : Les coefficients associés à chaque variable indépendante. Ces 
+coefficients montrent l'impact de chaque variable sur la variable dépendante 𝑦. 
+La régression linéaire multiple est une extension de la régression linéaire simple .Elle est 
+utilisée pour modéliser la relation entre une variable dépendante (ce qu’on veut prédire ) et 
+plusieurs variables indépendantes (les facteurs explicatifs).  En d’autres termes, d ans la 
+
+===== PAGE 47 =====
+ 
+46 
+ 
+régression linéaire multiple, l’objectif est de prédire une variable dépendante 𝑦 à partir de 
+plusieurs variables indépendantes  𝑥1,𝑥2,…,𝑥𝑝. 
+Exemple concret d’application : 
+Imaginons que nous voulions prédire le prix d’une maison en fonction de plusieurs variables 
+indépendantes : 
+Superficie (m²) 𝑥1 Nombre de chambres 𝑥2 Âge de la maison (années) 𝑥3 Prix (en $) 𝑦 
+100 3 5 300,000 
+120 4 10 350,000 
+80 2 20 200,000 
+150 5 3 450,000 
+90 3 15 250,000 
+Nous pourrions obtenir une formule de régression linéaire multiple comme suit : 
+𝑃𝑟𝑖𝑥=𝛽0+𝛽1∗𝑆𝑢𝑝𝑒𝑟𝑓𝑖𝑐𝑖𝑒+𝛽2∗𝐶ℎ𝑎𝑚𝑏𝑟𝑒𝑠+𝛽3∗𝐴𝑔𝑒 𝑑𝑒 𝑙𝑎 𝑀𝑎𝑖𝑠𝑜𝑛+𝜖 
+Disons que, après ajustement du modèle, nous obtenons les coefficients suivants : 
+𝑃𝑟𝑖𝑥=50,000+2,000∗𝑆𝑢𝑝𝑒𝑟𝑓𝑖𝑐𝑖𝑒+20,000∗𝐶ℎ𝑎𝑚𝑏𝑟𝑒𝑠−5,000∗𝐴𝑔𝑒 𝑑𝑒 𝑙𝑎 𝑀𝑎𝑖𝑠𝑜𝑛 
+Cela signifie que : 
+ Pour chaque mètre carré supplémentaire de la maison, le prix augmente de 2 000 $. 
+ Pour chaque chambre supplémentaire, le prix augmente de 20 000 $. 
+ Pour chaque année d'âge de la maison, le prix diminue de 5 000 $. 
+En utilisant cette formule, nous pouvons prédire le prix d’une maison en fonction de ses 
+caractéristiques. 
+En résumé : 
+La régression linéaire multiple permet de modéliser la relation entre une variable dépendante 𝑦 
+et plusieurs variables indépendantes  𝑥1,𝑥2,…,𝑥𝑝. L’objectif est de trouver les coefficients 
+
+===== PAGE 48 =====
+ 
+47 
+ 
+𝛽1,𝛽2,…,𝛽𝑝 qui minimisent l'erreur de prédiction et qui nous permettent de comprendre 
+comment chaque variable indépendante influence la variable dépendante. 
+3. Minimisation de l'erreur (méthode des moindres carrés) : 
+L'objectif de la régression linéaire est de minimiser l’erreur entre les valeurs réelles et les 
+valeurs prédites par le modèle. Cette erreur est mesurée par la fonction de perte, généralement 
+la somme des carrés des erreurs (mean squared error - MSE) : 
+𝑀𝑆𝐸=1
+𝑛∑(𝑦𝑖−𝑦̂𝑖)2
+𝑛
+𝑖=1
+ 
+Où : 
+ 𝑛 est le nombre d'exemples dans les données. 
+ 𝑦𝑖 est la valeur réelle. 
+ 𝑦̂𝑖 est la valeur prédite par le modèle. 
+L’idée est de minimiser cette erreur, c’est-à-dire de trouver les valeurs de  𝛽0 et  𝛽1 qui rendent 
+l’erreur la plus petite possible. 
+4. Cas d'utilisation de la régression linéaire : 
+ Prédiction de la demande : Prédire la demande de produits en fonction de différentes 
+variables (prix, saisons, etc.). 
+ Prédiction des prix de l'immobilier  : Prédire le prix des maisons en fonction de la 
+superficie, du nombre de chambres, etc. 
+ Analyse économique : Analyser la relation entre les taux d'intérêt et l'in vestissement 
+ou la croissance économique. 
+ 
+ 
+ 
+ 
+
+===== PAGE 49 =====
+ 
+48 
+ 
+Chapitre 6 : La régression Logistique 
+La régression logistique est une technique de machine Learning utilisée principalement pour 
+des problèmes de classification, où l'objectif est de prédire la probabilité qu' un exemple 
+appartienne à une classe donnée. C’est un modèle très utilisé dans de nombreux domaines 
+comme la santé, les finances, la reconnaissance d'images, etc. En d’autres mots, c’est un modèle 
+de machine Learning supervisé utilisé pour prédire une catég orie (classe).  
+Par exemple : 
+ Est-ce qu’un email est spam ou non ? 
+ Est-ce qu’un client va acheter ou pas acheter ? 
+ Est-ce qu’un patient a une maladie ou pas ? 
+Ce n’est pas une régression qui donne un chiffre (comme en régression linéaire), mais une 
+probabilité entre 0 et 1, qui est ensuite transformée en une classe (0 ou 1). 
+1. Introduction et objectifs 
+La régression logistique permet de prédire une probabilité (valeur entre 0 et 1) qu'un événement 
+se produise, basé sur certaines caractéristiques (ou variabl es explicatives). Cela la rend 
+particulièrement utile pour des problèmes de classification binaire (ex : prédire si une personne 
+est malade ou non, si un email est spam ou non). 
+2. La fonction logistique (sigmoïde) 
+La base de la régression logistique est l a fonction sigmoïde , qui permet de transformer 
+n'importe quelle valeur réelle (comprise entre -∞ et +∞) en une probabilité comprise entre 0 et 
+1. La fonction sigmoïde se définit par : 
+𝜎(𝑧)= 1
+1+𝑒−𝑧 
+Où : 
+ 𝑧 est une combinaison linéaire des variables d’entrée 𝑥, soit : 
+𝒛=𝒘𝟎+𝒘𝟏𝒙𝟏+𝒘𝟐𝒙𝟐+⋯+𝒘𝒏𝒙𝒏 
+ 𝑒 est la constante de la base du logarithme naturel (environ 2.718). 
+
+===== PAGE 50 =====
+ 
+49 
+ 
+Interprétation : 
+ Quand 𝑧→+∞, la fonction sigmoïde se rapproche de 1. 
+ Quand 𝑧→−∞, la fonction sigmoïde se rapproche de 0. 
+ À  𝑧=0, la fonction sigmoïde est égale à 0.5, ce qui représente une probabilité de 50%. 
+Cette fonction est extrêmement importante en machine Learning, notamment pour la régression 
+logistique, car elle permet de transformer n'importe quelle  valeur réelle 𝑧 en une probabilité 
+entre 0 et 1.  
+3. Comportement de la fonction sigmoïde : 
+ Quand 𝑧→+∞ (c'est-à-dire que 𝑧 devient très grand, comme 1000, 10000, etc.), alors 
+𝑒−𝑧 devient très proche de 0, et la fonction devient : 
+𝜎(𝑧)= 1
+1+0=1 
+Donc, lorsque 𝑧 est très grand, la fonction sigmoïde se rapproche de 1. Cela signifie que la 
+probabilité que l'événement se produise est très élevée. 
+ Quand 𝑧=0, on a : 
+𝜎(0)=
+1
+1+𝑒0=
+1
+1+1 =0.5 
+Ici, la fonction sigmoïde donne 0.5, ce qui correspond à une probabilité de 50 %. Cela représente 
+une situation où l'événement est aussi probable que non. 
+ Quand 𝑧→−∞  (c'est-à-dire que z devient très petit, comme -1000, -10000, etc.), alors 
+𝑒−𝑧 devient extrêmement grand, et la fonction devient : 
+𝜎(𝑧)= 1
+1+𝑇𝑟è𝑠 𝐺𝑟𝑎𝑛𝑑 𝑁𝑜𝑚𝑏𝑟𝑒≈0  
+Donc, lorsque 𝑧 devient très négatif, la fonction sigmoïde se rapproche de 0. Cela signifie que 
+la probabilité que l'événement se produise est très faible. 
+ La fonction sigmoïde transforme une combinaison linéaire  de variables (souvent 
+représentée par  𝒛=𝒘𝟎+𝒘𝟏𝒙𝟏+𝒘𝟐𝒙𝟐+⋯+𝒘𝒏𝒙𝒏 en une probabilité. 
+
+===== PAGE 51 =====
+ 
+50 
+ 
+ En régression logistique, 𝑧  représente le score linéaire calculé à partir des 
+caractéristiques d'un exemple (comme l'âge, le revenu, etc. ), et la fonction sigmoïde 
+transforme ce score en une probabilité que l'exemple appartienne à une certaine classe 
+(par exemple, la classe "spam" dans une classification d'emails). 
+Si la probabilité est proche de 1, cela signifie que l'exemple a une forte probabilité d'appartenir 
+à la classe positive (par exemple, spam). Si la probabilité est proche de 0, cela signifie qu'il a 
+une faible probabilité d'appartenir à la classe positive. 
+Exemple : 
+Imaginons qu'on ait une fonction sigmoïde avec un 𝑧=2. 
+𝜎(2)= 1
+1+𝑒−2 = 1
+1+0.13531≈0.882  
+Cela nous donne une probabilité d'environ 88.2 %. Si cette fonction représente la probabilité 
+qu'un email soit un spam, cela signifierait que l'email à 88,2 % de chances d'être un spam. 
+En résumé : 
+ La fonction sigmoïde est une manière de convertir un score (qui peut être n'importe 
+quelle valeur réelle) en une probabilité entre 0 et 1. 
+ Elle est très utile en régression logistique pour prendre une décision de classification 
+binaire. 
+4. Modèle de régression logistique 
+Dans la régression logistique, l'idée est de prédire la probabilité qu'une observation appartienne 
+à une classe donnée (par exemple, classe 1) : 
+𝑃(𝑦=1∣𝑥)=𝜎(𝑤0+𝑤1𝑥1+𝑤2𝑥2+⋯+𝑤𝑛𝑥𝑛)  
+Ici, 𝑃(𝑦=1∣𝑥) est la probabilité que l'observation 𝒙 appartienne à la classe 1, et 𝑤0+𝑤1+
+𝑤2+⋯+𝑤𝑛 sont les poids que le modèle apprend. 
+
+===== PAGE 52 =====
+ 
+51 
+ 
+Cette fonction représente la prob abilité que l'événement 𝑦=1 se produise, étant donné les 
+variables 𝑥1,𝑥2,…,𝑥𝑛, en utilisant la régression logistique. Voici une explication détaillée de 
+chaque élément de cette équation. 
+Que fait cette équation ? 
+Cette équation permet de préd ire la probabilité qu'un événement 𝑦=1 (par exemple, 
+qu'un email soit un spam) se produise, à partir d'un ensemble de variables explicatives 
+  𝑥1,𝑥2,…,𝑥𝑛 (par exemple, le nombre de fois où certains mots -clés apparaissent dans 
+un email).  
+Comment fonctionne-t-elle ? 
+1. Combinaison linéaire des variables  : Chaque variable 𝑤𝑖 (par exemple, le 
+nombre de fois qu'un mot clé apparaît) est multipliée par un poids 𝑤𝑖. Tous ces 
+produits sont additionnés avec un terme d'interception  𝑤0 
+2. Transformation sigmoïde : Le résultat de cette combinaison linéaire est ensuite 
+passé à travers la fonction sigmoïde, qui le transforme en une probabilité entre 
+0 et 1. 
+ Si la probabilité est proche de 1, cela signifie que l'événement 𝑦=1 (par 
+exemple, "spam") a une forte probabilité de se produire.  
+ Si la probabilité est proche de 0, cela signifie que l'événement  𝑦=1 a 
+une faible probabilité de se produire (par exemple, "non spam"). 
+Exemple: 
+Imaginons que nous utilisons la régression logistique pour prédire si un email est un spam ou 
+non, en fonction de deux variables : 
+ 𝑥1 : le nombre de fois que le mot "offre" apparaît dans l'email, 
+ 𝑥2 : le nombre de fois que le mot "gratuit" apparaît dans l'email. 
+Après avoir entraîné le modèle, on pourrait obtenir les poids suivants : 
+ 𝑤0=−2 (terme d'interception), 
+ 𝑤1=0.5  (poids pour 𝑥1), 
+
+===== PAGE 53 =====
+ 
+52 
+ 
+ 𝑤2=1.2  (poids pour 𝑥2). 
+Si un email contient 3 occurrences de "offre" et 2 occurrences de "gratuit", on calculerait : 
+𝑧=𝑤0+𝑤1𝑥1+𝑤2𝑥2=−2+0.5×3+1.2×2=−2+1.5+2.4=1.9  
+Ensuite, on passerait ce score à la fonction sigmoïde pour obtenir la probabilité : 
+𝑃(𝑦=1∣𝑥)=𝜎(1.9)= 1
+1+𝑒−1.9 ≈ 1
+1+0.1496 ≈0.870  
+Cela signifie que la probabilité que cet email soit un spam est de 87%. 
+En résumé, cette équation permet de transformer un ensemble de variables explicatives en une 
+probabilité que l'événement cible se produise ( ici 𝑦=1, par exemple, un email spam). La 
+fonction sigmoïde assure que cette probabilité reste entre 0 et 1. 
+5. Fonction de coût (ou log-vraisemblance) 
+Pour entraîner un modèle de régression logistique, on utilise une fonction de coût qui permet 
+de mesurer la différence entre les prédictions du modèle et les valeurs réelles. La fonction de 
+coût la plus couramment utilisée pour la régression logistique est la log-vraisemblance. 
+Pour un seul exemple, la fonction de coût est définie par : 
+𝐿(𝑦,𝑦̂)=−[𝑦𝑙𝑜𝑔(𝑦̂)+(1−𝑦)𝑙𝑜𝑔(1−𝑦̂)] 
+Où : 
+ 𝒚 est la valeur réelle (0 ou 1), 
+ 𝒚̂ est la probabilité prédite par le modèle. 
+La fonction de coût totale pour l'ensemble des données est la somme de la fonction de coût pour 
+chaque exemple. L'objectif est de minimiser cette fonction de coût pour obtenir les meilleurs 
+paramètres (𝒘𝟎,𝒘𝟏,…). 
+Cette fonction de coût mesure l'erreur logarithmique entre la vraie valeur 𝑦 (qui est 0 ou 1) et 
+la probabilité prédite 𝑦̂ par le modèle. La log -vraisemblance est utilisée dans la régression 
+
+===== PAGE 54 =====
+ 
+53 
+ 
+logistique pour maximiser la probabilité que les prédictions du modèle soient aussi proches que 
+possible des valeurs réelles.   
+Exemple: 
+Prenons un exemple où : 
+ 𝑦=1 (l'email est un spam), 
+ 𝑦̂=0.9 (le modèle prédit une probabilité de 90 % que l'email soit un spam). 
+Le calcul de la fonction de coût devient : 
+𝐿(1,0.9)=−[1𝑙𝑜𝑔 (0.9)+(1−1)𝑙𝑜𝑔 (1−0.9)] 
+𝐿(1,0.9)=−[1×𝑙𝑜𝑔 (0.9)]=−𝑙𝑜𝑔 (0.9)≈0.105 
+Ici, la fonction de coût est faible (0.105), ce qui signifie que la prédiction est relativement bonne, 
+car la probabilité prédite (𝑦̂=0.9) est proche de la vérité (𝑦=1). 
+Autre exemple où le modèle fait une mauvaise prédiction : 
+Prenons maintenant : 
+ 𝑦=1, 
+ 𝑦̂=0.1 (le modèle prédit une probabilité de 10 % que l'email soit un spam). 
+Le calcul devient : 
+𝐿(1,0.1)=−[1𝑙𝑜𝑔 (0.1)+(1−1)𝑙𝑜𝑔 (1−0.1)]  
+𝐿(1,0.1)=−𝑙𝑜𝑔 (0.1)≈2.302 
+Ici, la fonction de coût est élevée (2.302), ce qui indique une mauvaise prédiction du modèle. 
+Plus l'écart entre 𝑦̂ et 𝑦 est grand, plus la fonction de coût sera grande. 
+En résumé : 
+La fonction de coût en régression logistique 𝐿(𝑦,𝑦̂) mesure l'écart entre la valeur réelle 𝑦 (0 ou 
+1) et la probabilité prédite 𝑦̂. Si le modèle fait une bonne prédiction (c'est -à-dire que 𝑦̂ est 
+
+===== PAGE 55 =====
+ 
+54 
+ 
+proche de 𝑦), le coût est faible. Si le modèle fait une mauvaise prédiction, le coût est élevé. 
+L'objectif est de minimiser cette fonction de coût pour améliorer les prédictions du modèle. 
+6. Optimisation - Descente de gradient 
+Pour ajuster les poids (𝑤) du modèle, on utilise une méthode d'optimisation appelée descente 
+de gradient . Cette méthode consiste à ajuster les poids dans la direction qui réduit le plus 
+rapidement la fonction de coût. 
+Le gradient de la fonction de coût par rapport aux poids 𝑤𝑗 est donné par : 
+𝜕𝐿 
+𝜕𝑤𝑗
+= 1
+𝑚∑(𝑦̂𝑖−𝑦𝑖)
+𝑚
+𝑖=1
+𝑥𝑖𝑗 
+Où : 
+ 𝑚 est le nombre d'exemples dans le dataset, 
+ 𝑥𝑖𝑗 est la 𝑗-ème caractéristique de l’exemple 𝑖, 
+ 𝑦̂𝑖 est la probabilité prédite pour l’exemple 𝑖, 
+ 𝑦𝑖 est la valeur réelle pour l’exemple 𝑖. 
+Cette équation nous donne le gradient de la fonction de coût par rapport au poids 𝑤𝑗. Le 
+gradient est utilisé dans l'algorithme de descente de gradient pour ajuster les poids du modèle 
+dans la direction qui réduit la fonction de coût, c'est-à-dire qui améliore les prédictions. 
+L'algorithme de descente de gradient utilise ces gradients pour ajuster les poids du modèle. 
+À chaque itération, les poids sont modifiés dans la direction qui minimise l'erreur globale du 
+modèle (fonction de coût). 
+ Si 𝑦̂𝑖−𝑦𝑖 est grand, cela signifie que l'erreur pour cet exemple est importante, 
+et donc le gradient pour 𝑤𝑗 sera plus grand. Cela entraînera un ajustement plus 
+important de 𝑤𝑗. 
+ Si 𝑥𝑖𝑗 est élevé (par exemple, une caractéristique très influente), cela entraînera 
+également un ajustement important de 𝑤𝑗. 
+ Mise à jour des poids : 
+
+===== PAGE 56 =====
+ 
+55 
+ 
+Après avoir calculé le gradient 
+𝜕𝐿
+𝜕𝑤𝑗
+ pour tous les 𝑤𝑗, l'algorithme ajuste chaque poids 𝑤𝑗 avec 
+la formule : 
+𝑤𝑗=𝑤𝑗−𝛼. 𝜕𝐿
+𝜕𝑤𝑗
+ 
+Où 𝛼 est le taux d'apprentissage, un paramètre qui détermine l'ampleur des mises à jour des 
+poids. 
+En résumé :  
+Cette équation donne le gradient de la fonction de coût par rapport à un poids 𝑤𝑗. Le gradient 
+indique comment ajuster cha que poids 𝑤𝑗 pour minimiser l'erreur globale du modèle lors de 
+l'entraînement. Plus la différence entre 𝑦̂𝑖 et 𝑦𝑖 est grande, plus le gradient sera grand, ce qui 
+entraîne une mise à jour plus importante de 𝑤𝑗. 
+Ensuite, les poids sont ajustés par la règle suivante : 
+𝑤𝑗=𝑤𝑗−𝛼. 𝜕𝐿
+𝜕𝑤𝑗
+ 
+Où 𝛼 est le taux d'apprentissage, un hyperparamètre qui détermine la taille des pas dans la 
+direction du gradient. 
+Processus détaillé de la mise à jour des poids : 
+1. Calcul du gradient : 
+ D'abord, le gradient 
+𝜕𝐿
+𝜕𝑤𝑗
+ est calculé en fonction des prédictions du modèle et des 
+valeurs réelles des cibles. Cela nous indique dans quelle direction et avec quelle 
+force chaque poids  𝑤𝑗 doit être ajusté. 
+2. Mise à jour du poids 𝒘𝒋 : 
+ Une fois que le gradient est calculé, chaque poids  𝑤𝑗 est ajusté selon la règle de 
+mise à jour. Le poids est ajusté dans la direction opposée au gradient (c'est 
+pourquoi on soustrait le gradient) pour réduire la fonction de coût. 
+3. Répétition pour chaque poids : 
+
+===== PAGE 57 =====
+ 
+56 
+ 
+ Cette mise à jour est effectuée pour chaque poids 𝑤𝑗, pour toutes les 
+caractéristiques du modèle. 
+ Le processus est répété de manière itérative sur l'ensemble des données 
+d'entraînement pour ajuster progressivement les poids, jusqu'à ce que la fonction 
+de coût atteigne une valeur minimale ou proche de zéro. 
+Pourquoi utiliser cette mise à jour ? 
+ L'objectif de la descente de gradient  est de trouver les poids 𝑤𝑗 qui minimisent la 
+fonction de coût 𝐿. Cette règle de mise à jour permet d' ajuster les poids de manière 
+efficace en fonction de l'erreur actuelle, pour converger vers des valeurs optimales des 
+poids qui donnent de bonnes prédictions. 
+ Le taux d'apprentissage 𝜶 est crucial car il détermine l'ampleur de chaque mise à jour. 
+Si 𝛼 est trop grand, les poids risquent de "sauter" autour de la solution optimale, tandis 
+que s'il est trop petit, l'algorithme mettra beaucoup de temps à converger.   
+7. Cas d’utilisation 
+La régression logistique est couramment utilisée dans des cas comme : 
+ Prédiction de maladies  : Prédire la probabilité qu’un patient ait une maladie en 
+fonction de certaines caractéristiques (âge, poids, habitudes alimentaires, etc.). 
+ Crédit : Estimer la probabilité qu'une personne rembourse un crédit en fonction de son 
+historique financier. 
+ Marketing : Prédire si un client effectuera un achat ou non en fonction de ses 
+interactions avec un site web. 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 58 =====
+ 
+57 
+ 
+Chapitre 7 : Forêts Aléatoires 
+1. Définition  
+Une forêt aléatoire  est un algorithme d’apprentissage supervisé qui repose sur l’ idée de 
+combiner plusieurs arbres de décision  pour former un modèle plus robuste, plus stable et 
+plus précis. Plutôt que de construire un seul arbre qui pourrait surapprendre aux données (c’est-
+à-dire apprendre les détails et le bruit du jeu de données, ce qui nuit à sa capacité à généraliser), 
+la forêt aléatoire construit une multitude d’arbres différents  et fait une agrégation de leurs 
+résultats. 
+Chaque arbre de décision  dans la forêt est entraîné sur une version modifiée du jeu de 
+données, obtenue par un  processus appelé bootstrap : on tire au hasard, avec répétition, un 
+sous-ensemble de données depuis l’ensemble d’origine. Cela signifie que chaque arbre voit des 
+exemples différents, ce qui crée une certaine diversité entre eux. De plus, pour chaque division 
+(ou "split") à l’intérieur d’un arbre, au lieu de considérer toutes les variables (ou features), on 
+en sélectionne seulement un sous-ensemble choisi aléatoirement . Cette double dose 
+d’aléatoire (dans les données et dans les variables) rend les arbres encore plus différents les uns 
+des autres, et donc moins corrélés. 
+L’idée derrière cette diversité est la suivante : même si chaque arbre peut faire des erreurs  
+ou être influencé par certains biais des données, leurs erreurs seront différentes, et en les 
+moyennant, on obtient un modèle final plus précis et plus général. C’est ce qu’on appelle un 
+modèle d’ensemble : on rassemble plusieurs prédicteurs faibles pour former un prédicteur 
+fort. 
+Dans le cas de la classification, chaque arbre vote pour une classe, et la classe majoritaire est 
+choisie comme prédiction finale. Dans le cas de la régression, la prédiction finale est 
+généralement la moyenne des prédictions  de tous les arbres. Ce système de vote ou de 
+moyenne permet d’ amortir les erreurs  individuelles et d e rendre la prédiction globale plus 
+fiable. 
+Ce mécanisme rend les forêts aléatoires très performantes dans la pratique , même sans 
+beaucoup de réglages. Elles sont capables de gérer à la fois des données numériques et 
+catégoriques, sont robustes au surapprentissage, et peuvent même estimer l’importance de 
+chaque variable  dans la prédiction. C’est pour cela qu’elles sont très utilisées dans de 
+
+===== PAGE 59 =====
+ 
+58 
+ 
+nombreux domaines : santé, finance, industrie, détection de fraudes, reconnaissance d’images, 
+etc. 
+Exemple: demander conseil à plusieurs amis 
+Imagine que tu veux acheter un nouveau téléphone, mais tu hésites entre plusieurs modèles. Tu 
+ne veux pas te tromper, car c’est un achat important, alors tu décides de demander conseil autour 
+de toi. 
+ Scénario 1 : Tu demandes à un seul ami 
+Tu vas voir un ami très calé en technologie. Il connaît bien les smartphones, suit les nouveautés, 
+et donne généralement de bons conseils. Tu lui expliques tes besoins, ton bu dget, ton usage 
+quotidien, etc. Il réfléchit un peu, te pose deux ou troi s questions, puis te recommande un 
+modèle. Très bien. 
+Mais… tu te rends compte que parfois, ses conseils sont un peu biaisés. Il préfère toujours une 
+marque en particulier, ou il se fie à un seul critère (comme la performance), sans toujours 
+considérer d’autres aspects importants pour toi (comme la batterie ou la photo). Bref, même s’il 
+est très compétent, son avis unique peut être influencé par ses préférences personnelles, ses 
+habitudes, ou même par une mauvaise journée. 
+C’est un arbre de décision : un seul modèle, logique, structuré, mais parfois fragile et sensible 
+à des petits détails ou à un petit défaut dans les données. 
+ Scénario 2 : Tu demandes à tout un groupe d’amis 
+Maintenant, imagine que tu poses la même question à 50 amis différents . 
+Certains so nt des pros de la tech. D’autres s’y connaissent moins, mais ont leur propre 
+expérience. Certains adorent Apple, d’autres préfèrent Android. Certains ont des enfants et se 
+soucient de la solidité, d’autres voyagent beaucoup et se soucient de la batterie. 
+Chacun de ces amis te donne son avis, basé sur une partie différente de l’expérience. Certains 
+ne considèrent que le prix. D’autres se basent sur l’appareil photo. Certains te racontent ce qu’ils 
+ont entendu. Chacun voit une facette différente du problème . Leur jugement peut être 
+incomplet, ou partiel, mais ils sont tous sincères et indépendants. 
+À la fin, tu regardes ce que la majorité d’entre eux recommande. 
+ Même si certains se trompent, leur erreur est diluée dans le groupe. 
+
+===== PAGE 60 =====
+ 
+59 
+ 
+ Tu obtiens une réponse plus équilibrée, moins biaisée, et plus robuste. 
+Tu n’as pas seulement suivi une voix unique, tu as écouté une foule d’opinions diverses, et tu 
+as retenu la tendance générale. 
+ C’est ça une forêt aléatoire. 
+Chaque arbre (chaque ami) peut faire une erreur, m ais leurs erreurs ne sont pas les mêmes , 
+donc en moyenne, ils se corrigent entre eux. Le vote collectif donne une meilleure décision 
+qu’un expert seul. 
+Pourquoi c’est puissant ? 
+ Parce que tu diversifies les points de vue 
+ Parce que tu réduis les risques de surinterpréter un détail 
+ Parce que tu gagnes en robustesse, en stabilité, en fiabilité 
+C’est exactement ce que fait une forêt aléatoire  : au lieu de se fier à un seul modèle 
+déterministe, elle fait appel à plein de petits modèles imparfaits, chacun entraîné sur un point 
+de vue différent des données, et elle vote. 
+Et c’est ce qui fait sa force. 
+2. D’où vient cette « variété » entre les arbres d’une forêt aléatoire ? 
+Un des secrets de la puissance des forêts aléatoires réside dans leur diversité interne. Chaque 
+arbre, au lieu d’être une simple copie des autres, est comme un individu à part entière : il voit 
+les données selon sa propre vision du monde, ses propres expériences. 
+Mais comment cette diversité est -elle créée ? Est -ce que c’est juste du hasard ?  
+Eh bien, oui — mais du hasard bien contrôlé et très intelligent.  On utilise deux types de 
+“hasard” pour générer cette variété et faire en sorte que chaque arbre prenne des décisions 
+légèrement différentes des autres. 
+ Bootstrap : échantillonnage aléatoire des données 
+Pour entraîner chaque arbre, on ne lui donne pas tout le jeu de données original . 
+À la place, on crée un nouvel échantillon , en tirant aléatoirement des exemples avec 
+répétition. 
+
+===== PAGE 61 =====
+ 
+60 
+ 
+Par exemple, si tu as 100 exemples dans ton dataset, un arbre peut êtr e entraîné sur 100 
+exemples tirés au hasard, mais avec certains doublés et d’autres totalement absents. 
+C’est comme si on formait chaque arbre dans un petit univers parallèle, où certains faits sont 
+exagérés et d'autres ont disparu. 
+ Image mentale  : imagine  plusieurs personnes qui regardent la même scène, mais à 
+travers des vitres teintées de couleurs différentes. Chacun perçoit quelque chose d’un 
+peu différent, et donc chacun racontera l’histoire à sa manière. 
+ Résultat : chaque arbre développe sa propre manière de voir le problème, ce qui rend la 
+forêt plus intelligente collectivement. 
+ 
+  Sélection aléatoire des variables (random features) 
+Même à l’intérieur d’un arbre, on ajoute encore une dose de hasard. 
+Lorsqu’un arbre doit décider comment séparer les données à chaque nœud, il ne regarde pas 
+toutes les variables possibles. Au lieu de cela, il choisit un petit sous-ensemble aléatoire de 
+variables (appelées features) et décide de la meilleure séparation parmi celles-là seulement. 
+Par exemple, si ton dataset contient les colonnes suivantes : 
+ Âge 
+ Revenu 
+ Sexe 
+ Niveau d’études 
+ Ville 
+ Taille de l’écran 
+…alors un arbre ne va peut-être regarder que 3 de ces 6 variables à chaque fois qu’il veut faire 
+une division. Et ces 3 variables sont tirées au hasard. 
+ C’est comme si un arbitre ne pouvait juger un match qu’en observant certaines caméras 
+choisies au hasard à chaque action. Du coup, il ne verra pas toujours la même chose 
+que les autres arbitres — ce qui le rend plus unique. 
+
+===== PAGE 62 =====
+ 
+61 
+ 
+ Grâce à cela, chaque arbre fait des choix diff érents, même s’il reçoit des données 
+similaires. 
+On évite que tous les arbres prennent exactement les mêmes décisions — ce qui serait 
+inutile — et on maximise la diversité dans la forêt. 
+ 
+ Pourquoi cette variété est-elle importante ? 
+Imagine une salle rempl ie de personnes qui pensent toutes exactement pareil . Si l’une se 
+trompe, tout le monde suit dans l’erreur. 
+Mais si les gens ont des opinions différentes, alors leurs erreurs ne se propagent pas de la 
+même manière . Certains vont compenser les erreurs des a utres. 
+Et c’est exactement ce qu’on veut dans une forêt aléatoire : des arbres imparfaits mais 
+indépendants, qui corrigent leurs erreurs en se complétant mutuellement. 
+ Cette diversité rend le modèle plus robuste , moins sensible aux petites anomalies 
+dans les données, et donc plus performant sur de nouveaux cas jamais vus. 
+3. Comment fonctionne une forêt aléatoire ? 
+Imaginons que tu as un jeu de données  et que tu veux qu’un modèle te dise si, par exemple, un 
+client va acheter un produit ou non. 
+Tu vas alors confier ce jeu de données à une forêt aléatoire. Et voici ce qui se passe dans les 
+coulisses, étape par étape : 
+Étape 1 : L’algorithme crée plusieurs arbres de décision 
+On ne construit pas un seul modèle, mais plein d’arbres , disons par exemple 100.  
+Chacun de ces arbres va apprendre à faire des prédictions, mais pas exactement de la même 
+façon. 
+C’est un peu comme recruter 100 analystes, chacun avec sa méthode légèrement différente, 
+pour qu’ils te donnent leur avis. 
+Étape 2 : Chaque arbre est entraîné sur des données légèrement différentes 
+Plutôt que d’utiliser le dataset complet, chaque arbre reçoit un échantillon aléatoire du jeu de 
+données, obtenu grâce à un procédé appelé bootstrap. 
+
+===== PAGE 63 =====
+ 
+62 
+ 
+Cela signifie que certains exemples seront dupliqués, et d’autres absent s. 
+Chaque arbre aura donc sa propre “vision” du dataset, comme s’il observait la réalité sous un 
+angle particulier. 
+Résultat : les arbres sont variés, ils ne résonnent pas tous de la même manière. 
+Étape 3 : À chaque division dans un arbre, on choisit des variables au hasard 
+Lorsqu’un arbre doit faire une séparation  (par exemple, décider : "est -ce que l’âge est > 40 
+ans ?"), il ne regarde pas toutes les colonnes du dataset. 
+Au lieu de ça, il sélectionne au hasard un petit sous -ensemble de variables (par exemple 3 
+sur les 10 disponibles), et ne choisit la meilleure séparation  qu’à partir de ces quelques 
+variables. 
+C’est comme si un arbitre devait prendre une décision en ne consultant que 3 caméras au hasard 
+parmi les 10 disponibles. 
+Cela force les arbres à se comporter de façon encore plus unique les uns par rapport aux autres. 
+Étape 4 : Chaque arbre donne sa prédiction 
+Une fois tous les arbres entraînés, on peut leur soumettre une nouvelle observation  (un 
+nouveau client, un nouvel exemple...). 
+Chaque arbre, in dépendamment des autres, donne sa propre prédiction . 
+Certains diront "oui, il achètera", d’autres "non". 
+Étape 5 : La forêt vote ou fait la moyenne 
+Pour obtenir la décision finale, on agrège toutes les prédictions : 
+ Si c’est un problème de classification (ex : "oui" ou "non"), on fait un vote majoritaire 
+: 
+la classe qui reçoit le plus de votes gagne. 
+ Si c’est un problème de régression (ex : "combien va -t-il dépenser ?"), on fait la 
+moyenne des prédictions des arbres. 
+L’idée : même si un arbre se trompe, les  autres peuvent compenser.  
+Comme dans un jury, c’est le consensus général qui compte. 
+
+===== PAGE 64 =====
+ 
+63 
+ 
+ Résultat : une prédiction plus robuste et plus fiable 
+Grâce à cette combinaison d’avis, la forêt aléatoire produit un résultat qui : 
+ Est moins sensible aux erreurs individuelles 
+ Est moins sujet au surapprentissage 
+ Et souvent plus performant qu’un seul arbre 
+Exemple : Prédire si un fruit est bon à manger  
+Objectif 
+Tu es agriculteur ou chef cuisinier, et tu veux savoir : 
+Est-ce que ce fruit est bon à manger ? Oui ou non ? 
+Tu veux automatiser cette décision grâce à un modèle de machine Learning. 
+ Tes données 
+Tu as observé 100 fruits, et pour chacun tu as noté ces caractéristiques : 
+ Couleur (Rouge, Verte, Jaune…) 
+ Poids (en grammes) 
+ Texture (Lisse, Rugueuse…) 
+ Odeur (Forte, Faible, Neutre…) 
+Et surtout, tu sais pour chaque fruit s’il était : 
+ Bon à manger  
+ Ou Pas bon  
+Donc tu as un tableau avec 100 lignes (les fruits), 4 colonnes (les attributs), et une colonne cible 
+(le résultat : bon ou pas). 
+Étape 1 : Construire la forêt 
+Tu décides d’utiliser une forêt aléatoire avec 10 arbres. 
+Étape 2 : Création des arbres avec données aléatoires (bootstrap) 
+Pour construire chaque arbre, on ne prend pas exactement les mêmes 100 fruits. 
+
+===== PAGE 65 =====
+ 
+64 
+ 
+Au lieu de ça, pour chaque arbre : 
+ On pioche 100 fruits au hasard, avec remise. 
+ Donc certains fruits seront utilisés plusieurs fois, et d’autres ne seront pas vus du tout 
+par cet arbre. 
+Imagine que tu tires 100 billes dans un sac de 100, mais à chaque tir, tu remets la bille dans le 
+sac avant de tirer à nouveau. Tu peux tirer deux fois la même ! 
+Résultat : chaque arbre a son propre jeu de données, avec ses biais, ses absents, ses doublons. 
+Chaque arbre apprend un peu différemment. 
+Étape 3 : Séparation avec variables aléatoires (random features) 
+Quand un arbre doit faire un choix, comme : 
+"Est-ce que je divise selon la couleur ou la texture ?" 
+Il ne regarde pas les 4 colonnes disponibles. Il choisit 2 colonnes au hasard, par exemple : 
+ Couleur 
+ Poids 
+Et il cherche la meilleure séparation possible parmi ces 2-là seulement. 
+ Cela force chaque arbre à explorer des chemins de décision uniques. 
+ Même avec les mêmes données, il peut se comporter autrement ! 
+Étape 4 : Chaque arbre donne son avis 
+Une fois les 10 arbres construits, tu veux tester un nouveau fruit : 
+ Il est vert  
+ Il pèse 150g  
+ Il est rugueux au toucher 
+ Son odeur est assez forte 
+Tu demandes à chaque arbre : 
+"Alors, tu penses qu’il est bon à manger ?" 
+Voici ce que chacun répond : 
+
+===== PAGE 66 =====
+ 
+65 
+ 
+ Arbre 1 : Oui 
+ Arbre 2 : Oui 
+ Arbre 3 : Non 
+ Arbre 4 : Oui 
+ Arbre 5 : Oui 
+ Arbre 6 : Non 
+ Arbre 7 : Oui 
+ Arbre 8 : Oui 
+ Arbre 9 : Oui 
+ Arbre 10 : Non 
+Étape 5 : Vote final 
+On compte les voix : 
+ 7 arbres disent "Oui" 
+ 3 arbres disent "Non" 
+Comme on est en classification, on utilise le vote majoritaire : 
+ Le fruit est donc considéré comme bon à manger. 
+ Même si quelques arbres se trompent, la majorité a raison. 
+ Grâce à la diversité des arbres, l’erreur individuelle est compensée collectivement. 
+1. Calcul de l'Erreur dans les Arbres de Décision 
+Un arbre de décision prend des décisions en fonction de critères comme l’entropie ou l’indice 
+de Gini. 
+ Indice de Gini (utilisé pour la classification) : L'indice de Gini mesure l'impureté d'un 
+ensemble. Pour un ensemble de classes 𝐶 : 
+𝐺𝑖𝑛𝑖(𝐷)=1−∑𝑝𝑖
+2
+𝑘
+𝑖=1
+  
+Où : 
+
+===== PAGE 67 =====
+ 
+66 
+ 
+ 𝑝𝑖 est la proportion des éléments de la classe i dans le sous-ensemble 𝐷, 
+ 𝑘 est le nombre de classes. 
+Plus l'indice de Gini est faible, plus l'ensemble est pur. 
+L’indice de Gini  est utilisée pour évaluer combien un ensemble de données est "pur" ou 
+"impliqué", c'est-à-dire combien les données sont mélangées en termes de classes. Plus l'indice 
+de Gini est bas, plus l'ensemble est "pur", ce qui signifie qu'il est plus probable que les éléments 
+appartiennent à une même classe. 
+Interprétation 
+ Si tu as un ensemble pur (par exemple, tous les éléments appa rtiennent à une seule 
+classe), alors 𝑝1 et les autres 𝑝1,𝑝2,𝑝3,…,𝑝𝑛=0. Cela donne : 
+𝐺𝑖𝑛𝑖(𝐷)=1−(12+02+02+⋯ )=1−1=0  
+Ce qui signifie que l'ensemble est totalement pur. 
+ Si les classes sont également réparties, cela signifie qu'il y a de l'incertitude sur la 
+classe à prédire. Par exemple, si tu as deux classes et qu'elles sont également réparties 
+dans ton ensemble de données,  𝑝1=𝑝2=0.5. La formule devient : 
+𝐺𝑖𝑛𝑖(𝐷)=1−(0.52+0.52)=1−(0.25+0.25)=1−0.5=0.5  
+Cela signifie que l'ensemble est plus "impur", car il y a une grande incertitude sur la classe des 
+éléments. 
+Exemple concret 
+Imagine que tu aies un ensemble de données avec 10 éléments, répartis en 3 classes : 
+ 4 éléments appartiennent à la classe A 
+ 3 éléments appartiennent à la classe B 
+ 3 éléments appartiennent à la classe C 
+Les proportions des classes seraient : 
+ 𝑝𝐴=
+4
+10=0.4 
+ 𝑝𝐵=
+3
+10=0.3 
+
+===== PAGE 68 =====
+ 
+67 
+ 
+ 𝑝𝐶=
+3
+10=0.3 
+Tu peux calculer l'indice de Gini de cet ensemble : 
+𝐺𝑖𝑛𝑖(𝐷)=1−(0.42+0.32+0.32)  
+𝐺𝑖𝑛𝑖(𝐷)=1−(0.16+0.09+0.09)=1−0.34=0.66  
+Donc, l'indice de Gini pour cet ensemble de données est 0.66,  ce qui montre qu'il est 
+relativement "impur" car les classes sont partiellement mélangées. 
+Conclusion 
+L'indice de Gini est un moyen simple et efficace d'évaluer l'impureté d'un ensemble de données. 
+Plus l'indice est élevé, plus l'ensemble est mélangé et m oins il est pur. En revanche, un indice 
+faible indique un ensemble plus pur. C'est un critère couramment utilisé dans les arbres de 
+décision pour diviser les nœuds afin d'obtenir des classifications plus précises. 
+ Entropie (utilisée dans certains cas pour la division) : 
+𝐸𝑛𝑡𝑟𝑜𝑝𝑖𝑒(𝐷)=−∑𝑝𝑖
+𝑘
+𝑖=1
+ log (𝑝𝑖) 
+L'entropie mesure le désordre ou l'incertitude d'une distribution. 
+Comparaison avec l'indice de Gini 
+L'entropie et l'indice de Gini mesurent tous deux l'impureté d'un ensemble de données,  mais 
+leur formule et leur interprétation sont légèrement différentes. L'indice de Gini a tendance à 
+être plus rapide à calculer, tandis que l'entropie est plus sensible aux différences entre les 
+classes. 
+ Gini : Mesure la probabilité qu'un élément soit mal classifié si l'on choisit une classe au 
+hasard. 
+ Entropie : Mesure l'incertitude ou l'impureté, c'est -à-dire le degré de surprise si l'on 
+devine la classe d'un élément. 
+Les deux critères sont largement utilisés dans les arbres de décision pour effectuer les divisions 
+des nœuds. 
+2. Erreur de la Forêt Aléatoire 
+
+===== PAGE 69 =====
+ 
+68 
+ 
+La performance d'une forêt aléatoire est mesurée en combinant les performances de tous les 
+arbres. L'idée est de prendre la moyenne des erreurs de tous les arbres pour prédire l'erreur de 
+la forêt entière. 
+𝐸𝑟𝑟𝑒𝑢𝑟 𝑑𝑒 𝑙𝑎 𝐹𝑜𝑟ê𝑡= 1
+𝑁∑𝐸𝑟𝑟𝑒𝑢𝑟 𝑑𝑒 𝑙′𝐴𝑟𝑏𝑟𝑒𝑖
+𝑁
+𝑖=1
+  
+Où : 
+1. 𝑵 : Nombre d'arbres dans la forêt. 
+Dans une forêt aléatoire, plusieurs arbres de décision sont construits, chaque arbre étant un 
+classificateur. Donc, 𝑁 est le nombre total d'arbres dans cette forêt. 
+2. 𝑬𝒓𝒓𝒆𝒖𝒓𝑨𝒓𝒃𝒓𝒆𝒊:𝑬𝒓𝒓𝒆𝒖𝒓 𝒅𝒖 𝒊−è𝒎𝒆 𝒂𝒓𝒃𝒓𝒆 𝒅𝒆 𝒍𝒂 𝒇𝒐𝒓ê𝒕 
+Chaque arbre dans la forêt aléatoire fait une prédiction et commet une erreur. L' erreur d'un 
+arbre est la différence entre  la prédiction de l'arbre et la vérité sur les données d'entrée. Cette 
+erreur peut être mesurée par différents critères, comme l'erreur de classification (pour un 
+problème de classification) ou l'erreur quadratique moyenne (pour un problème de régression). 
+Cette formule indique que l' erreur de la forêt  (la forêt d'arbres de décision) est la moyenne 
+des erreurs individuelles  des 𝑁 arbres qui composent la forêt. Autrement dit, chaque arbre 
+dans la forêt fait une prédiction, et l'erreur de la forêt est simplement l'erreur moyenne des 
+prédictions de tous les arbres. 
+Dans une forêt aléatoire, l'idée est que l'ensemble de plusieurs arbres (chacun ayant une erreur 
+individuelle) va en moyenne réduire l'erreur par rapport à celle d'un seul arbre. Cela fonctionne 
+car chaque arbre dans la forêt peut commettre des erreurs de manière différente, et lorsque l'on 
+les combine (par exemple, en votant ou en prenant la moyenne des prédictions), cela permet de 
+diminuer la variance des erreurs. 
+En résumé, l'erreur d'une forêt est la moyenne des erreurs des arbres qui la composent, et la 
+forêt aléatoire profite de cette approche pour réduire les erreurs globales grâce à la diversité des 
+arbres. 
+Exemple d'Application des forets aléatoires : 
+Prenons un exemple simple pour illustrer l'utilisation d'une forêt aléatoire dans la vie 
+quotidienne. 
+
+===== PAGE 70 =====
+ 
+69 
+ 
+Prédire si une personne va acheter un produit en ligne 
+Imaginons une entreprise en ligne qui veut prédire si une personne va acheter un produit après 
+avoir visité le site. Ils ont des données historiques qui comprennent des informations comme : 
+ L'âge de la personne 
+ Le temps passé sur le site 
+ Le type de produit consulté 
+ Le nombre de pages visitées 
+ Etc. 
+Chaque arbre de décision dans la forêt pourrait être construit sur un sous -ensemble aléatoire 
+de ces caractéristiques, et les arbres pourraient poser différentes questions sur les 
+caractéristiques des utilisateurs (par exemple, "Est-ce que l'utilisateur a passé plus de 5 minutes 
+sur le site ?" ou "Est-ce que l'utilisateur a consulté plus de 3 produits ?"). 
+En combinant les résultats des arbres, la forêt aléatoire peut prédire avec une grande précision 
+si un utilisateur est susceptible d'acheter le produit ou non. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+===== PAGE 71 =====
+ 
+70 
+ 
+Chapitre 8 : Réseaux de Neurones Artificiels (ANN) 
+Les réseaux de neurones artificiels (ANN) sont l'un des concepts les plus puissants en machine 
+Learning et en intelligence artificielle. Apprendre leur fonctionnement à partir de zéro implique 
+de comprendre plusieurs éléments clés, y compris les concepts mathématiques, leur 
+interprétation et des exemples pratiques. 
+1. Introduction aux Réseaux de Neurones Artificiels (ANN) 
+Les réseaux de neurones artificie ls sont inspirés du cerveau humain. Ils sont constitués de 
+neurones organisés en couches (input, hidden, et output). Chaque neurone reçoit des entrées, 
+effectue des calculs, puis produit une sortie. Un réseau de neurones est composé de plusieurs 
+neurones interconnectés, chacun étant responsable d'un calcul basé sur les informations reçues. 
+Les trois types de couches : 
+ Couche d'entrée (Input Layer) : C'est là où les données brutes sont introduites dans le 
+réseau. 
+ Couches cachées (Hidden Layers) : Ce sont les couches intermédiaires où se produisent 
+les calculs. Elles sont appelées cachées car on ne les voit pas directement dans l'entrée 
+et la sortie. 
+ Couche de sortie (Output Layer) : C'est la couche qui donne la sortie du réseau de 
+neurones, en fonction des calculs des couches cachées. 
+Les réseaux de neurones utilisent les concepts de l'algèbre linéaire, des fonctions d'activation et 
+de la rétropropagation pour apprendre à partir des données. 
+1.1. Le Neurone  
+Chaque neurone effectue un calcul en combinant les entrées avec des poids et un biais. 
+La sortie d'un neurone peut être représentée comme suit : 
+𝑦=𝑓(∑𝑤𝑖𝑥𝑖
+𝑛
+𝑖=1
++𝑏) 
+Où : 
+ 𝒇 est la fonction d'activation. Elle est utilisée pour introduire de la non-linéarité dans le calcul 
+du neurone. La fonct ion 𝑓 peut être une fonction comme la sigmoïde, ReLU, ou tangente 
+
+===== PAGE 72 =====
+ 
+71 
+ 
+hyperbolique. Elle transforme la somme des entrées pondérées en une valeur de sortie que le 
+neurone transmet à la couche suivante (ou à la sortie du réseau). 
+Exemple: 
+Imaginons que tu veuilles prédire si quelqu'un va acheter un produit en ligne (oui ou non), en 
+fonction de deux caractéristiques : le temps passé sur le site (en minutes) et le montant d'argent 
+déjà dépensé. Le neurone va faire une prédiction comme suit : 
+ 𝑥1 = temps passé sur le site (par exemple, 15 minutes), 
+ 𝑥2 = montant dépensé (par exemple, 30 €), 
+ 𝑤1 et 𝑤2 sont des poids qui déterminent l'importance de ces caractéristiques dans la 
+décision (par exemple, 𝑤1=0.5 et 𝑤2=0.8), 
+ 𝑏 est un biais pour ajuster la prédiction. 
+La formule devient alors : 
+𝑦=𝑓(0.5∗15+0.8∗30+𝑏) 
+Cela donne la sortie 𝑦, qui pourrait représenter la probabilité d'achat (par exemple, une valeur 
+entre 0 et 1 si la fonction d'activation est une sigmoïde). 
+En résumé : 
+ Le neurone combi ne les entrées 𝑥𝑖 en les multipliant par les poids 𝑤𝑖, puis ajoute le 
+biais 𝑏. 
+ Cette somme est ensuite transformée par la fonction d'activation 𝑓 pour obtenir la 
+sortie𝑦. 
+1.2. Rétropropagation (Backpropagation) : 
+La rétropropagation est l'algorithme d'apprentissage clé pour les réseaux de neurones. Il ajuste 
+les poids des neurones en fonction de l'erreur entre la sortie prédite et la sortie réelle. L'idée est 
+de propager l'erreur en arrière à travers le réseau et de mettre à jour les poids po ur réduire 
+l'erreur. 
+La mise à jour des poids se fait par l'algorithme de descente de gradient : 
+
+===== PAGE 73 =====
+ 
+72 
+ 
+𝑤𝑖=𝑤𝑖−η𝜕𝐸
+𝜕𝑤𝑖
+ 
+Où : 
+ 𝐸 est l'erreur ou la fonction de coût. 
+ 𝜂 est le taux d'apprentissage (learning rate). 
+ 
+𝜕𝐸
+𝜕𝑤𝑖
+ est la dérivée de l'erreur par rapport au poids 𝑤𝑖. 
+2. Mise à jour des poids  
+La formule « 𝑤𝑖=𝑤𝑖−η
+𝜕𝐸
+𝜕𝑤𝑖
+ » décrit une mise à jour du poids  selon la règle de la descente 
+de gradient. 
+ 𝑤𝑖 : le poids actuel. 
+ 𝜂 : le taux d'apprentissage, qui détermine l'ampleur de la mise à jour. 
+ 
+𝝏𝒘𝒊
+𝝏𝑬  : le gradient de l'erreur par rapport au p oids, indiquant comment l'erreur 
+change par rapport au poids. 
+La mise à jour des poids suit la direction opposée du gradient (c'est-à-dire on diminue l'erreur), 
+car nous voulons minimiser l'erreur du modèle, ce qui est l'objectif principal de l'entraînement. 
+Comment cela fonctionne dans l'entraînement des modèles : 
+ Initialisation : Les poids sont initialisés à des valeurs aléatoires. 
+ Calcul de l'erreur  : On effectue une prédiction avec les poids actuels, et on calcule 
+l'erreur en comparant cette prédiction à la vérité terrain. 
+ Calcul du gradient  : On calcule la dérivée partielle de l'erreur par rapport à chaque 
+poids, c'est-à-dire comment l'erreur change par rapport à chaque poids. 
+ Mise à jour des poids  : Les poids sont mis à jour à l'aide de la règle 𝑤𝑖=𝑤𝑖−η
+𝜕𝐸
+𝜕𝑤𝑖
+, 
+en ajustant les poids dans la direction qui réduit l'erreur. 
+ Répétition : Ce processus est répété pendant de nombreuses itérations (ou époques) 
+jusqu'à ce que l'erreur soit suffisamment faible. 
+
+===== PAGE 74 =====
+ 
+73 
+ 
+Exemple avec une interprétation concrète : 
+Imaginons que nous avons un modèle de réseau de neurones qui prédit si une personne achètera 
+ou non un produit (une tâche de classification binaire). Supposons que  𝑤𝑖 représente le poids 
+associé à une caractéristique spécifique (par exempl e, le nombre d'heures passées à naviguer 
+sur un site web avant un achat). 
+ Si l'erreur (l'écart entre la prédiction du modèle et la réalité) est grande, le gradient  
+𝝏𝒘𝒊
+𝝏𝑬   
+indiquera dans quelle direction (augmenter ou diminuer) le poids  𝑤𝑖 doit être modifié. 
+ En utilisant cette formule, on mettra à jour le poids  𝑤𝑖 dans la direction qui permet de 
+réduire l'erreur pour la prochaine prédiction. 
+Exemple numérique : 
+ Disons que le poids initial 𝑤𝑖=0.5. 
+ Le taux d’apprentissage 𝜂=0.1. 
+ Le gradient de l'erreur par rapport au poids est 
+𝝏𝒘𝒊
+𝝏𝑬 =0.2. 
+La mise à jour du poids serait alors : 
+𝑤𝑖=0.5−0.1×0.2=0.5−0.02=0.48  
+Ainsi, le poids 𝑤𝑖 est ajusté de 0.02 pour réduire l'erreur. 
+3. Cas d'Utilisation des Réseaux de Neurones 
+Les ANN peuvent être utilisées pour une variété de tâches : 
+ Classification : Comme pour les images ou le texte (par exemple, la reconnaissance 
+d'images, la détection de spam). 
+ Régression : Pour prédire des valeurs continues (par exemple, prédire les prix  
+immobiliers). 
+ Clustering : Bien que ce ne soit pas la tâche principale des réseaux de neurones, certains 
+réseaux peuvent effectuer des tâches de regroupement (comme dans l'auto-encodage). 
+ 
+ 
+
+===== PAGE 75 =====
+ 
+74 
+ 
+Chapitre 9 : Fondements Probabilistes et Classificateur de Bayes 
+1. Motivation — Raisonner sous incertitude 
+Les chapitres précédents nous ont donné des outils pour apprendre des règles déterministes : un 
+arbre de décision produit une réponse certaine, une conjonction de littéraux est soit vraie soit 
+fausse. Mais le monde réel est fondamentalement incertain. 
+Considérons un médecin qui reçoit le résultat positif d'un test de dépistage d'une maladie rare. 
+Doit-il conclure que le patient est malade ? Pas nécessairement — et la raison est subtile. 
+Supposons que : 
+ La maladie touche 1 personne sur 1000 dans la population 
+ Le test détecte correctement les malades dans 99% des cas 
+Le test donne un faux positif dans 2% des cas (sur des personnes saines) 
+Question : Si le test est positif, quelle est la probabilité que le patient soit réellement malade ? 
+La plupart des gens répondent intuitivement "99%" ou "très élevée". La réponse correcte est 
+environ 4.7%. Cette contre-intuition, appelée la négligence du taux de base, illustre pourquoi 
+nous avons besoin d'un cadre mathématique rigoureux pour raisonner sous incertitude. 
+Ce cadre, c'est le théorème de Bayes. 
+2. Rappels de probabilités 
+Avant d'aller plus loin, rappelons les fondements nécessaires. Vous les connaissez déjà, mais 
+les revoir dans le contexte de l'apprentissage automatique les ancrera différemment. 
+2.1 Probabilité conditionnelle 
+Définition : La probabilité de l'événement A sachant que l'événement B  s'est réalisé est : 
+𝑃(𝐴\𝐵)=𝑃(𝐴∩𝐵)
+𝑃(𝐵) ,𝑎 𝑐𝑜𝑛𝑑𝑖𝑡𝑖𝑜𝑛 𝑞𝑢𝑒 𝑃(𝐵)>0 
+Interprétation : on restreint l'univers aux cas où B est vrai, et on mesure la proportion où A 
+est aussi vrai. 
+Règle du produit : de la définition, on tire immédiatement : 
+𝑃(𝐴∩𝐵)=𝑃(𝐴\𝐵).𝑃(𝐵)=𝑃(𝐵\𝐴).𝑃(𝐴) 
+2.2 La loi des probabilités totales 
+Si 𝐵1,𝐵2,…,𝐵𝑛 forment une partition de l'univers (événements mutuellement exclusifs et 
+exhaustifs), alors pour tout événement A : 
+
+===== PAGE 76 =====
+ 
+75 
+ 
+𝑃(𝐴)=∑𝑃(𝐴\𝐵𝑖
+𝑛
+𝑖=1
+).𝑃(𝐵𝑖) 
+Intuition : pour calculer la probabilité de A, on décompose selon tous les contextes possibles 𝐵𝑖
+, on calcule la probabilité de A dans chaque contexte, et on pondère par la probabilité de chaque 
+contexte. 
+2.3 Indépendance 
+Deux événements A et B sont indépendants si : 
+𝑃(𝐴∩𝐵)=𝑃(𝐴).𝑃(𝐵) 
+Ce qui équivaut à 𝑃(𝐴\𝐵)=𝑃(𝐴): savoir que B s'est réalisé ne change rien à notre estimation 
+de A. 
+Indépendance conditionnelle : A et B sont conditionnellement indépendants sachant  𝐶 si 
+: 
+𝑃(𝐴∩𝐵\𝐶)=𝑃(𝐴\𝐶).𝑃(𝐵\𝐶) 
+Cette notion sera fondamentale pour le classificateur naïf de Bayes. 
+2.3 Le Théorème de Bayes 
+3.3.1 Énoncé et dérivation 
+Théorème de Bayes : 
+𝑃(𝐻\𝐸)=𝑃(𝐸\𝐻).𝑃(𝐻)
+𝑃(𝐸)  
+Dérivation : c'est une conséquence directe de la règle du produit appliquée deux fois : 
+𝑃(𝐻∩𝐸)=𝑃(𝐻\𝐸).𝑃(𝐸)=𝑃(𝐸\𝐻).𝑃(𝐻) 
+En divisant par 𝑃(𝐸) : 
+𝑃(𝐻\𝐸)=𝑃(𝐸\𝐻).𝑃(𝐻)
+𝑃(𝐸)  
+Le dénominateur 𝑃(𝐸) s'obtient par la loi des probabilités totales sur toutes les hypothèses 𝐻𝑖 : 
+𝑃(𝐸)=∑𝑃(𝐸\𝐻𝑖
+𝑖
+).𝑃(𝐻𝑖) 
+3.3.2 Vocabulaire et interprétation 
+
+===== PAGE 77 =====
+ 
+76 
+ 
+Chaque terme du théorème de Bayes a un nom et une signification précise : 
+𝑃(𝐻\𝐸)⏟    
+𝑝𝑜𝑠𝑡𝑒𝑟𝑖𝑜𝑟𝑖
+=
+𝑃(𝐸\𝐻)⏟    
+𝑣𝑟𝑎𝑖𝑠𝑒𝑚𝑏𝑙𝑎𝑛𝑐𝑒
+. 𝑃(𝐻)⏟  
+𝑎 𝑝𝑟𝑖𝑜𝑟𝑖
+𝑃(𝐸)⏟  
+é𝑣𝑖𝑑𝑒𝑛𝑐𝑒
+ 
+𝑃(𝐻) — probabilité a priori : Notre croyance sur H avant d'observer les données. Elle encode 
+notre connaissance initiale du monde — dans l'exemple médical, c'est la prévalence de la 
+maladie (1/1000). 
+𝑃(𝐸\𝐻)— vraisemblance : La probabilité d'observer les données E si l'hypothèse  H est vraie. 
+Dans l'exemple médical, c'est la sensibilité du test (99%). 
+𝑃(𝐻\𝐸) — probabilité a posteriori :  Notre croyance mise à jour après avoir observé les 
+données. C'est ce qu'on cherche à calculer. 
+𝑃(𝐸) — évidence : La probabilité d'observer les données, toutes hypothèses confondues. C'est 
+une constante de normalisation qui garantit que ∑𝑃(𝐻𝑖\𝐸)=1𝑖 . 
+Le message fondamental du théorème de Bayes : 
+𝑃𝑜𝑠𝑡𝑒𝑟𝑖𝑜𝑟𝑖∝𝑉𝑟𝑎𝑖𝑠𝑒𝑚𝑏𝑙𝑎𝑛𝑐𝑒∗𝐴 𝑝𝑟𝑖𝑜𝑟𝑖 
+Observer des données met à jour nos croyances initiales. Les nouvelles données « pèsent » plus 
+quand elles sont informatives (vraisemblance élevée) et moins quand l'a priori est très fort. 
+3.3.3 Résolution du problème médical 
+Reprenons l'exemple du début. Notons : 
+ 𝑀 : le patient est malade 
+ 𝑇+ : le test est positif 
+Données : 
+ 𝑃(𝑀)=1/1000=0.001 (prévalence) 
+ 𝑃(𝑇+\𝑀)=0.99 (sensibilité) 
+ 𝑃(𝑇+\𝑀̅)=0.02 (taux de faux positifs) 
+Calcul de l'évidence par la loi des probabilités totales : 
+𝑃(𝑇+)=𝑃(𝑇+\𝑀).𝑃(𝑀)+𝑃(𝑇+\𝑀̅).𝑃(𝑀̅) 
+=0.99∗0.001+0.02∗0.999 
+=0.00099+0.01998=0.02097 
+Application du théorème de Bayes : 
+
+===== PAGE 78 =====
+ 
+77 
+ 
+𝑃(𝑀\𝑇+)=𝑃(𝑇+\𝑀).𝑃(𝑀)
+𝑃(𝑇+) =0.99∗0.001
+0.02097 ≈0.0472 
+La probabilité d'être malade après un test positif est seulement 4.72% ! 
+4. L'Apprentissage Bayésien 
+4.1 Bayes appliqué à l'apprentissage 
+En apprentissage automatique, on peut appliquer le théorème de Bayes pour trouver l'hypothèse 
+la plus probable étant donné les données : 
+𝑃(ℎ\𝐷)=𝑃(𝐷\ℎ).𝑃(ℎ)
+𝑃(𝐷)  
+L'hypothèse MAP (Maximum A Posteriori) : 
+ℎ𝑀𝐴𝑃=argmax
+ℎ∈𝐻
+𝑃(ℎ\𝐷)=argmax
+ℎ∈𝐻
+𝑃(𝐷\ℎ).𝑃(ℎ) 
+On maximise sur h donc  𝑃(𝐷), qui ne dépend pas de h, disparaît. 
+L'hypothèse MV (Maximum de Vraisemblance) : 
+Si toutes les hypothèses ont la même probabilité a priori  (𝑃(ℎ)=𝑐𝑜𝑛𝑠𝑡), alors : 
+ℎ𝑀𝑉=argmax
+ℎ∈𝐻
+𝑃(𝐷\ℎ) 
+On dit qu'on maximise la vraisemblance des données. C'est le cas le plus simple et le plus 
+répandu en pratique. 
+4.2 Vraisemblance et données i.i.d. 
+En apprentissa ge, on suppose généralement que les exemples sont indépendants et 
+identiquement distribués (i.i.d.) selon une distribution 𝑃𝐷. 
+Sous cette hypothèse, la vraisemblance de l'ensemble de données se factorise : 
+𝑃(𝐷\ℎ)=∏𝑃(𝑥𝑖,𝑦𝑖\ℎ)
+𝑛
+𝑖=1
+ 
+Maximiser ce produit est équivalent à maximiser le log de la vraisemblance  (transformation 
+strictement croissante) : 
+log𝑃(𝐷\ℎ)=∑log𝑃(𝑥𝑖,𝑦𝑖\ℎ)
+𝑛
+𝑖=1
+ 
+Travailler avec le log est préférable pour deux raisons : 
+
+===== PAGE 79 =====
+ 
+78 
+ 
+1. Une somme est numériquement plus stable qu'un produit de très petits nombres 
+2. Une somme est plus facile à dériver pour l'optimisation 
+Ce lien est fondamental :  maximiser la vraisemblance est équivalent à minimiser la log-
+vraisemblance négative, qui est une fonction de perte. 
+5. Le Classificateur Naïf de Bayes 
+5.1 Le problème de classification probabiliste 
+En classification, on cherche à prédire la classe 𝑦∈{1,2,…,𝐾} d'un exemple 𝑋=
+(𝑥1,𝑥2,…,𝑥𝑝) 
+La règle de décision bayésienne optimale : 
+On prédit la classe qui maximise la probabilité a posteriori : 
+𝑦̂=argmax
+𝑘
+𝑃(𝑌=𝑘\𝑋)=argmax
+𝑘
+𝑃(𝑋\𝑌=𝑘).𝑃(𝑌=𝑘)
+𝑃(𝑋)  
+Comme 𝑃(𝑋) ne dépend pas de 𝑘, on a simplement : 
+𝑦̂=argmax
+𝑘
+𝑃(𝑋\𝑌=𝑘).𝑃(𝑌=𝑘) 
+5.2 L'hypothèse "naïve" d'indépendance conditionnelle 
+L'astuce du classificateur naïf de Bayes est de supposer que les features sont 
+conditionnellement indépendantes sachant la classe : 
+𝑃(𝑥1,𝑥2,…,𝑥𝑝\𝑌=𝑘)=∏𝑃(𝑥𝑗\𝑌=𝑘)
+𝑝
+𝑗=1
+ 
+Cette hypothèse est dite "naïve" car elle est rarement exactement vraie en pratique. Par exemple, 
+dans un email, les mots "banque" et "argent" sont corrélés. Mais malgré cette simplification 
+forte, le classificateur obtient de très bonnes performances dans de nombreuses applications 
+réelles. 
+Règle de décision finale : 
+𝑦̂=argmax
+𝑘
+𝑃(𝑌=𝑘).∏𝑃(𝑥𝑗\𝑌=𝑘)
+𝑝
+𝑖=1
+ 
+Avec le logarithme pour éviter les underflows numériques : 
+𝑦̂=argmax
+𝑘
+log𝑃(𝑌=𝑘)+∑log𝑃(𝑥𝑗
+𝑝
+𝑗=1
+\𝑌=𝑘) 
