@@ -123,7 +123,7 @@ L'application sera accessible à `http://localhost:8501`
 git init -b main
 git add .
 git commit -m "Initial commit: ML prediction app"
-git remote add origin https://github.com/VOTRE_USERNAME/chatboat-AI.git
+git remote add origin https://github.com/VOTRE USERNAME/chatboat-AI.git
 git push -u origin main
 ```
 
