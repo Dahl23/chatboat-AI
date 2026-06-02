@@ -47,7 +47,7 @@ L'agriculture représente plus de 40% du PIB du Burundi et constitue la principa
 
 1. Cloner le dépôt et naviguer dans le répertoire :
 ```bash
-git clone https://github.com/votre-username/chatboat-AI.git
+git clone https://github.com/dahl23/chatboat-AI.git
 cd chatboat-AI
 ```
 
@@ -123,7 +123,7 @@ L'application sera accessible à `http://localhost:8501`
 git init -b main
 git add .
 git commit -m "Initial commit: ML prediction app"
-git remote add origin https://github.com/VOTRE USERNAME
+git remote add origin https://github.com/dahl23
 /chatboat-AI.git
 git push -u origin main
 ```
