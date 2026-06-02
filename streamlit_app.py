@@ -56,8 +56,52 @@ MODEL_NOTES = {
     "Régression logistique": "Modèle simple et interprétable, avec la meilleure AUC sur le jeu de test.",
 }
 
+SCENARIO_PRESETS = {
+    "Aucun": None,
+    "Kayanza - Maïs": {
+        "province": "Kayanza",
+        "culture": "Maïs",
+        "altitude_m": 1980.0,
+        "pluviometrie_mm": 920.0,
+        "temperature_moy_C": 17.8,
+        "superficie_ha": 2.5,
+        "utilisation_engrais": 1,
+        "acces_irrigation": 0,
+    },
+    "Bubanza - Manioc": {
+        "province": "Bubanza",
+        "culture": "Manioc",
+        "altitude_m": 790.0,
+        "pluviometrie_mm": 550.0,
+        "temperature_moy_C": 25.4,
+        "superficie_ha": 3.0,
+        "utilisation_engrais": 0,
+        "acces_irrigation": 1,
+    },
+    "Gitega - Haricot": {
+        "province": "Gitega",
+        "culture": "Haricot",
+        "altitude_m": 1720.0,
+        "pluviometrie_mm": 430.0,
+        "temperature_moy_C": 18.2,
+        "superficie_ha": 1.8,
+        "utilisation_engrais": 0,
+        "acces_irrigation": 0,
+    },
+    "Cibitoke - Patate douce": {
+        "province": "Cibitoke",
+        "culture": "Patate douce",
+        "altitude_m": 810.0,
+        "pluviometrie_mm": 810.0,
+        "temperature_moy_C": 24.1,
+        "superficie_ha": 2.2,
+        "utilisation_engrais": 1,
+        "acces_irrigation": 1,
+    },
+}
+
 CULTURE_DISPLAY_TO_INTERNAL = {
-    "Maïs": "Maļs",
+    "Maïs": "Maïs",
     "Haricot": "Haricot",
     "Manioc": "Manioc",
     "Patate douce": "Patate douce",
@@ -83,6 +127,18 @@ st.set_page_config(
 )
 
 sns.set_theme(style="whitegrid", context="notebook")
+
+APP_STYLE = """
+<style>
+    .stApp { background: linear-gradient(180deg, #f7fbfc 0%, #e8f1f4 100%); }
+    .css-18ni7ap.e8zbici2 { padding-top: 1rem; }
+    .stButton>button { background-color: #0f4c81; color: white; }
+    .stButton>button:hover { background-color: #0b3a62; }
+    .stAlert { background-color: #eef7fb; border-color: #b7d5e8; }
+    .stMarkdown h1 { color: #0f4c81; }
+    .stMarkdown h2 { color: #0b3a62; }
+</style>
+"""
 
 
 def pretty_feature_name(name: str) -> str:
@@ -330,15 +386,19 @@ def main() -> None:
     provinces = sorted(dataset["province"].dropna().unique().tolist())
     cultures_display = list(CULTURE_DISPLAY_TO_INTERNAL.keys())
 
-    st.title("Prédiction des récoltes au Burundi")
-    st.caption(
-        "Application web du TP d'IA appliquée à l'agriculture. "
-        "Le modèle choisi prédit si la récolte sera bonne ou mauvaise à partir des caractéristiques de la parcelle."
-    )
+    st.markdown(APP_STYLE, unsafe_allow_html=True)
+    st.title("Prédiction des récoltes au Burundi 🌾")
+    st.markdown(
+        "### Application web du TP d'IA appliquée à l'agriculture"
+        "\n\nEntrez les caractéristiques de la parcelle et comparez les prédictions de trois modèles.")
 
-    st.sidebar.header("Paramètres")
+    st.sidebar.header("Paramètres du modèle")
     selected_model = st.sidebar.selectbox("Choisir le modèle", list(MODEL_LABELS.keys()))
     st.sidebar.info(MODEL_NOTES[selected_model])
+
+    st.sidebar.subheader("Scénarios d'exemple")
+    scenario_key = st.sidebar.selectbox("Choisir un scénario", list(SCENARIO_PRESETS.keys()))
+    scenario = SCENARIO_PRESETS[scenario_key]
 
     st.sidebar.subheader("Aperçu du jeu de données")
     sidebar_cols = st.sidebar.columns(2)
@@ -346,7 +406,14 @@ def main() -> None:
     sidebar_cols[1].metric("Colonnes", f"{dataset.shape[1]}")
     st.sidebar.metric("Provinces", dataset["province"].nunique())
     st.sidebar.metric("Cultures", dataset["culture"].nunique())
-    st.sidebar.metric("Classe bonne récolte", f"{dataset[TARGET_COL].dropna().mean():.1%}")
+    st.sidebar.metric("Bonne récolte", f"{dataset[TARGET_COL].dropna().mean():.1%}")
+
+    with st.sidebar.expander("Aide rapide"):
+        st.write(
+            "- Utilisez un scénario d'exemple pour préremplir les champs. \n"
+            "- Comparez les métriques des modèles dans la barre latérale. \n"
+            "- Le modèle recommandé pour la production est la forêt aléatoire."
+        )
 
     st.sidebar.subheader("Comparaison des modèles")
     st.sidebar.dataframe(metrics_df.round(3), use_container_width=True)
@@ -357,20 +424,65 @@ def main() -> None:
         "Les variables utilisées sont celles du pipeline d'entraînement."
     )
 
+    default_values = {
+        "province": scenario["province"] if scenario else provinces[0],
+        "culture_display": scenario["culture"] if scenario else cultures_display[0],
+        "altitude_m": scenario["altitude_m"] if scenario else 1750.0,
+        "pluviometrie_mm": scenario["pluviometrie_mm"] if scenario else 800.0,
+        "temperature_moy_C": scenario["temperature_moy_C"] if scenario else 20.0,
+        "superficie_ha": scenario["superficie_ha"] if scenario else 2.4,
+        "utilisation_engrais": scenario["utilisation_engrais"] if scenario else 1,
+        "acces_irrigation": scenario["acces_irrigation"] if scenario else 0,
+    }
+
     with st.form("prediction_form"):
         form_col1, form_col2 = st.columns(2)
 
         with form_col1:
-            province = st.selectbox("Province", provinces)
-            culture_display = st.selectbox("Culture", cultures_display)
-            altitude_m = st.number_input("Altitude (m)", min_value=500.0, max_value=2500.0, value=1750.0, step=10.0)
-            pluviometrie_mm = st.number_input("Pluviométrie (mm)", min_value=0.0, max_value=2000.0, value=800.0, step=10.0)
+            province = st.selectbox("Province", provinces, index=provinces.index(default_values["province"]))
+            culture_display = st.selectbox("Culture", cultures_display, index=cultures_display.index(default_values["culture_display"]))
+            altitude_m = st.number_input(
+                "Altitude (m)",
+                min_value=500.0,
+                max_value=2500.0,
+                value=float(default_values["altitude_m"]),
+                step=10.0,
+            )
+            pluviometrie_mm = st.number_input(
+                "Pluviométrie (mm)",
+                min_value=0.0,
+                max_value=2000.0,
+                value=float(default_values["pluviometrie_mm"]),
+                step=10.0,
+            )
 
         with form_col2:
-            temperature_moy_C = st.number_input("Température moyenne (°C)", min_value=10.0, max_value=35.0, value=20.0, step=0.1)
-            superficie_ha = st.number_input("Superficie (ha)", min_value=0.1, max_value=20.0, value=2.4, step=0.1)
-            utilisation_engrais = st.selectbox("Utilisation d'engrais", [0, 1], format_func=lambda value: "Oui" if value == 1 else "Non")
-            acces_irrigation = st.selectbox("Accès à l'irrigation", [0, 1], format_func=lambda value: "Oui" if value == 1 else "Non")
+            temperature_moy_C = st.number_input(
+                "Température moyenne (°C)",
+                min_value=10.0,
+                max_value=35.0,
+                value=float(default_values["temperature_moy_C"]),
+                step=0.1,
+            )
+            superficie_ha = st.number_input(
+                "Superficie (ha)",
+                min_value=0.1,
+                max_value=20.0,
+                value=float(default_values["superficie_ha"]),
+                step=0.1,
+            )
+            utilisation_engrais = st.selectbox(
+                "Utilisation d'engrais",
+                [0, 1],
+                index=int(default_values["utilisation_engrais"]),
+                format_func=lambda value: "Oui" if value == 1 else "Non",
+            )
+            acces_irrigation = st.selectbox(
+                "Accès à l'irrigation",
+                [0, 1],
+                index=int(default_values["acces_irrigation"]),
+                format_func=lambda value: "Oui" if value == 1 else "Non",
+            )
 
         submitted = st.form_submit_button("Prédire")
 
@@ -402,49 +514,31 @@ def main() -> None:
         else:
             st.error(f"Prédiction : {prediction}")
 
-        result_cols = st.columns(3)
-        result_cols[0].metric("Probabilité de bonne récolte", f"{probability:.1%}")
-        result_cols[1].metric("Probabilité de mauvaise récolte", f"{(1 - probability):.1%}")
-        result_cols[2].metric("Seuil de décision", "50%")
+            result_cols = st.columns([1, 1, 0.8])
+            result_cols[0].metric("Probabilité de bonne récolte", f"{probability:.1%}")
+            result_cols[1].metric("Probabilité de mauvaise récolte", f"{(1 - probability):.1%}")
+            result_cols[2].metric("Seuil de décision", "50%")
 
-        st.progress(min(max(probability, 0.0), 1.0))
+            st.progress(min(max(probability, 0.0), 1.0))
+            st.caption("Progression du score de confiance du modèle")
 
-        sample_summary = pd.DataFrame(
-            [
-                {
-                    "Province": province,
-                    "Culture": culture_display,
-                    "Altitude (m)": altitude_m,
-                    "Pluviométrie (mm)": pluviometrie_mm,
-                    "Température (°C)": temperature_moy_C,
-                    "Superficie (ha)": superficie_ha,
-                    "Engrais": "Oui" if utilisation_engrais else "Non",
-                    "Irrigation": "Oui" if acces_irrigation else "Non",
-                }
-            ]
-        )
-        st.dataframe(sample_summary, use_container_width=True)
+            sample_summary = pd.DataFrame(
+                [
+                    {
+                        "Province": province,
+                        "Culture": culture_display,
+                        "Altitude (m)": altitude_m,
+                        "Pluviométrie (mm)": pluviometrie_mm,
+                        "Température (°C)": temperature_moy_C,
+                        "Superficie (ha)": superficie_ha,
+                        "Engrais": "Oui" if utilisation_engrais else "Non",
+                        "Irrigation": "Oui" if acces_irrigation else "Non",
+                    }
+                ]
+            )
 
-        st.subheader("4. Variables influentes")
-        fig, chart_df = build_feature_chart(selected_model, selected_model_object, feature_columns)
-        st.pyplot(fig, clear_figure=True)
-
-        top_variables = chart_df.sort_values("Valeur", ascending=False).head(5)
-        st.write("Top 5 des variables selon le modèle sélectionné")
-        st.dataframe(top_variables, use_container_width=True)
-    else:
-        st.info("Remplissez le formulaire puis cliquez sur **Prédire** pour obtenir le résultat.")
-
-    with st.expander("À propos du modèle et de la logique de prédiction"):
-        st.markdown(
-            """
-            - **Arbre de décision** : facile à interpréter, mais plus fragile.
-            - **Forêt aléatoire** : agrégation d'arbres pour réduire la variance.
-            - **Régression logistique** : modèle linéaire probabiliste, utile pour classer le risque.
-
-            L'app réutilise les modèles sauvegardés (`.pkl`), le scaler et les colonnes finales du TP.
-            """
-        )
+            st.markdown("**Paramètres de la parcelle analysée**")
+            st.dataframe(sample_summary, use_container_width=True)
 
 
 if __name__ == "__main__":

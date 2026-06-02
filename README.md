@@ -123,7 +123,8 @@ L'application sera accessible à `http://localhost:8501`
 git init -b main
 git add .
 git commit -m "Initial commit: ML prediction app"
-git remote add origin https://github.com/VOTRE USERNAME/chatboat-AI.git
+git remote add origin https://github.com/VOTRE USERNAME
+/chatboat-AI.git
 git push -u origin main
 ```
 
@@ -242,3 +243,8 @@ Ce projet est fourni à des fins pédagogiques. Les modèles et données ne doiv
 **Dernière mise à jour** : Mai 2026  
 **Version** : 1.0 - Production Ready  
 **Status** : ✅ Complètement testé et documenté
+
+
+
+
+pour le moment voici le lien de pour acceder a l'app deja heberger sur streamlit https://agriculturebdiai-nm6xtuwuzs2lqlqoakat9k.streamlit.app/
